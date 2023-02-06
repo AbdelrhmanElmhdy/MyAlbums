@@ -15,7 +15,7 @@ class ProfileCoordinatorMock: Coordinator, ViewingAlbumDetails {
 		
 	}
 	
-	func viewAlbumDetails() {
+	func viewAlbumDetails(_ album: Album) {
 		
 	}
 	

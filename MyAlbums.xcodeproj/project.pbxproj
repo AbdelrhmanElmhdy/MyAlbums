@@ -13,7 +13,6 @@
 		BC3D2679299061B200948490 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D2678299061B200948490 /* User.swift */; };
 		BC3D267B299061C900948490 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D267A299061C900948490 /* Album.swift */; };
 		BC3D267D2990646500948490 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D267C2990646500948490 /* Address.swift */; };
-		BC3D26802990647800948490 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D267F2990647800948490 /* Location.swift */; };
 		BC6625B6298FF9FD00ED94D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625B5298FF9FD00ED94D5 /* AppDelegate.swift */; };
 		BC6625B8298FF9FD00ED94D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625B7298FF9FD00ED94D5 /* SceneDelegate.swift */; };
 		BC6625BA298FF9FD00ED94D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625B9298FF9FD00ED94D5 /* ProfileViewController.swift */; };
@@ -45,6 +44,12 @@
 		BC66262629903EA600ED94D5 /* ProfileCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66262529903EA500ED94D5 /* ProfileCoordinatorMock.swift */; };
 		BC6626292990435700ED94D5 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6626282990435700ED94D5 /* SettingsCoordinator.swift */; };
 		BC66262B2990458200ED94D5 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66262A2990458200ED94D5 /* UIImage+Ext.swift */; };
+		BCB37D632990CE8E00D6C671 /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D622990CE8E00D6C671 /* AlbumDetailsViewModel.swift */; };
+		BCB37D652990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D642990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift */; };
+		BCB37D692990D0AE00D6C671 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D682990D0AE00D6C671 /* AlbumCollectionViewCell.swift */; };
+		BCB37D6B2990D58C00D6C671 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D6A2990D58C00D6C671 /* UIView+Ext.swift */; };
+		BCD1AFE62990695000CFDDD4 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD1AFE52990695000CFDDD4 /* ProfileHeader.swift */; };
+		BCD1AFEA2990774100CFDDD4 /* ProfileTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD1AFE92990774100CFDDD4 /* ProfileTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +76,6 @@
 		BC3D2678299061B200948490 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BC3D267A299061C900948490 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		BC3D267C2990646500948490 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		BC3D267F2990647800948490 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		BC6625B2298FF9FD00ED94D5 /* MyAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6625B5298FF9FD00ED94D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6625B7298FF9FD00ED94D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +113,12 @@
 		BC66262529903EA500ED94D5 /* ProfileCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorMock.swift; sourceTree = "<group>"; };
 		BC6626282990435700ED94D5 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		BC66262A2990458200ED94D5 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		BCB37D622990CE8E00D6C671 /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
+		BCB37D642990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		BCB37D682990D0AE00D6C671 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		BCB37D6A2990D58C00D6C671 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		BCD1AFE52990695000CFDDD4 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		BCD1AFE92990774100CFDDD4 /* ProfileTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +152,6 @@
 				BC3D2678299061B200948490 /* User.swift */,
 				BC3D267A299061C900948490 /* Album.swift */,
 				BC3D267C2990646500948490 /* Address.swift */,
-				BC3D267F2990647800948490 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 				BC66260429902B1D00ED94D5 /* Protocols */,
 				BC3D267729905E0600948490 /* Models */,
 				BC6625E62990126600ED94D5 /* Screens */,
+				BCD1AFE42990693200CFDDD4 /* Views */,
 				BC6625EF299014F000ED94D5 /* Navigation */,
 				BC66260129902A3F00ED94D5 /* Networking */,
 				BC6625F7299020F500ED94D5 /* Persistence */,
@@ -234,6 +244,7 @@
 			children = (
 				BC6625B9298FF9FD00ED94D5 /* ProfileViewController.swift */,
 				BC3D267129905B5E00948490 /* ProfileViewModel.swift */,
+				BCD1AFE92990774100CFDDD4 /* ProfileTableViewDataSource.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -242,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				BC3D267329905D4700948490 /* AlbumDetailsViewController.swift */,
+				BCB37D622990CE8E00D6C671 /* AlbumDetailsViewModel.swift */,
+				BCB37D642990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift */,
 			);
 			path = AlbumDetails;
 			sourceTree = "<group>";
@@ -251,6 +264,7 @@
 			children = (
 				BC6625EA2990131F00ED94D5 /* String+Ext.swift */,
 				BC66262A2990458200ED94D5 /* UIImage+Ext.swift */,
+				BCB37D6A2990D58C00D6C671 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -366,6 +380,15 @@
 				BC6626282990435700ED94D5 /* SettingsCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BCD1AFE42990693200CFDDD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCD1AFE52990695000CFDDD4 /* ProfileHeader.swift */,
+				BCB37D682990D0AE00D6C671 /* AlbumCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,19 +525,21 @@
 			files = (
 				BC66262B2990458200ED94D5 /* UIImage+Ext.swift in Sources */,
 				BC66260829902B7D00ED94D5 /* UserDefaultsManagerProtocol.swift in Sources */,
-				BC3D26802990647800948490 /* Location.swift in Sources */,
 				BC3D267629905D6F00948490 /* ImageViewerViewController.swift in Sources */,
 				BC6626292990435700ED94D5 /* SettingsCoordinator.swift in Sources */,
 				BC662613299037CB00ED94D5 /* ViewControllersFactory.swift in Sources */,
 				BC66260E2990369100ED94D5 /* RootTabBarController.swift in Sources */,
+				BCD1AFEA2990774100CFDDD4 /* ProfileTableViewDataSource.swift in Sources */,
 				BC6625BA298FF9FD00ED94D5 /* ProfileViewController.swift in Sources */,
 				BC6626152990387C00ED94D5 /* ProfileCoordination.swift in Sources */,
 				BC3D2679299061B200948490 /* User.swift in Sources */,
 				BC3D267429905D4700948490 /* AlbumDetailsViewController.swift in Sources */,
 				BC66261B29903AED00ED94D5 /* SettingsViewController.swift in Sources */,
 				BC6625F3299015BA00ED94D5 /* ProfileCoordinator.swift in Sources */,
+				BCB37D6B2990D58C00D6C671 /* UIView+Ext.swift in Sources */,
 				BC66262629903EA600ED94D5 /* ProfileCoordinatorMock.swift in Sources */,
 				BC3D267229905B5E00948490 /* ProfileViewModel.swift in Sources */,
+				BCB37D632990CE8E00D6C671 /* AlbumDetailsViewModel.swift in Sources */,
 				BC66262329903E5000ED94D5 /* SettingsCoordinatorMock.swift in Sources */,
 				BC66260C29902C3700ED94D5 /* StorageWrapper.swift in Sources */,
 				BC662617299038E600ED94D5 /* SettingsCoordination.swift in Sources */,
@@ -523,8 +548,10 @@
 				BC6625F12990151900ED94D5 /* Coordinator.swift in Sources */,
 				BC662610299036E600ED94D5 /* TabBarCoordinator.swift in Sources */,
 				BC6625B6298FF9FD00ED94D5 /* AppDelegate.swift in Sources */,
+				BCB37D692990D0AE00D6C671 /* AlbumCollectionViewCell.swift in Sources */,
 				BC66260629902B5900ED94D5 /* NetworkingManagerProtocol.swift in Sources */,
 				BC6625F92990211800ED94D5 /* UserDefaultsManager.swift in Sources */,
+				BCB37D652990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift in Sources */,
 				BC66261D29903BAE00ED94D5 /* SwiftUIPreview.swift in Sources */,
 				BC6625EB2990131F00ED94D5 /* String+Ext.swift in Sources */,
 				BC3D267D2990646500948490 /* Address.swift in Sources */,
@@ -532,6 +559,7 @@
 				BC6625B8298FF9FD00ED94D5 /* SceneDelegate.swift in Sources */,
 				BC66262029903CE900ED94D5 /* MainViewControllersFactory.swift in Sources */,
 				BC3D267B299061C900948490 /* Album.swift in Sources */,
+				BCD1AFE62990695000CFDDD4 /* ProfileHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

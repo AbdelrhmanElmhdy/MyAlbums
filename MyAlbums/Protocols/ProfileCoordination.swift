@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol ViewingAlbumDetails {
-	func viewAlbumDetails()
+protocol ViewingAlbumDetails: AnyObject {
+	func viewAlbumDetails(_ album: Album)
 }
 
-protocol ViewingImage {
+protocol ViewingImage: AnyObject {
 	func viewImage()
 }

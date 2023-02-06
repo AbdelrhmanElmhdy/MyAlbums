@@ -7,18 +7,21 @@
 
 import Foundation
 
-struct Address: Codable {
+struct Address {
 	let street: String
 	let suite: String
 	let city: String
 	let zipCode: String
-	let location: Location
-	
+}
+
+extension Address: Codable {
 	enum CodingKeys: String, CodingKey {
-		case street
-		case suite
-		case city
-		case location = "geo"
-		case zipCode = "zipcode"
+		case street, suite, city, zipCode = "zipcode"
+	}
+}
+
+extension Address: CustomStringConvertible {
+	var description: String {
+		return "\(street), \(suite), \(city), \(zipCode)"
 	}
 }

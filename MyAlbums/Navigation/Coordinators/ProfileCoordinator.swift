@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileCoordinator: Coordinator, ViewingAlbumDetails {
+class ProfileCoordinator: Coordinator, ViewingAlbumDetails, ViewingImage {
 	var children = Array<Coordinator>()
 	let navigationController: UINavigationController
 	let viewControllersFactory: ViewControllersFactory
@@ -26,7 +26,15 @@ class ProfileCoordinator: Coordinator, ViewingAlbumDetails {
 		navigationController.pushViewController(viewController, animated: false)
 	}
 	
-	func viewAlbumDetails() {
-		// TODO: navigate to album details screen.
+	func viewAlbumDetails(_ album: Album) {
+		let albumDetailsVC = viewControllersFactory.makeAlbumDetailsViewController(for: self, album: album)
+		albumDetailsVC.hidesBottomBarWhenPushed = true
+		albumDetailsVC.title = album.title
+		
+		navigationController.pushViewController(albumDetailsVC, animated: true)
+	}
+	
+	func viewImage() {
+		
 	}
 }

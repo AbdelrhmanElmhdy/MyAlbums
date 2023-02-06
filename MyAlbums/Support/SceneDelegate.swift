@@ -16,14 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		
 		let navigationController = UINavigationController()
-		navigationController.navigationBar.prefersLargeTitles = true
 		
 		window = UIWindow(frame: windowScene.coordinateSpace.bounds)
 		window?.windowScene = windowScene
 		window?.rootViewController = navigationController
 		window?.makeKeyAndVisible()
 		
-		let appDelegate = AppDelegate.shared
+		let appDelegate = AppDelegate.shared!
 		
 		tabBarCoordinator = TabBarCoordinator(navigationController: navigationController,
 																					viewControllersFactory: appDelegate.viewControllersFactory)

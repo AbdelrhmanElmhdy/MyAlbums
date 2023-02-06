@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class ImageViewerViewController: UIViewController {
+class ImageViewerViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

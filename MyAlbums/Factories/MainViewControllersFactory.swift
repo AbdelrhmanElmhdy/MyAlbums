@@ -5,7 +5,7 @@
 //  Created by Abdelrhman Elmahdy on 05/02/2023.
 //
 
-import Foundation
+import UIKit
 
 class MainViewControllersFactory {
 	let dependencyContainer: DependencyContainer
@@ -18,8 +18,13 @@ class MainViewControllersFactory {
 extension MainViewControllersFactory: ProfileViewControllersFactory {
 
 	func makeProfileViewController(for coordinator: ViewingAlbumDetails) -> ProfileViewController {
-		// TODO: Implement factory method
-		return ProfileViewController()
+		let viewModel = ProfileViewModel()
+		return ProfileViewController(coordinator: coordinator, viewModel: viewModel)
+	}
+	
+	func makeAlbumDetailsViewController(for coordinator: ViewingImage, album: Album) -> AlbumDetailsViewController {
+		let viewModel = AlbumDetailsViewModel(album: album)
+		return AlbumDetailsViewController(coordinator: coordinator, viewModel: viewModel)
 	}
 
 }

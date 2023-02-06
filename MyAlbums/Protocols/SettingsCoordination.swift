@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DisclosingSettings {
+protocol DisclosingSettings: AnyObject {
 	// TODO: Define the settingsDisclosureOption type
 	func disclose(_ settingsDisclosureOption: Any)
 }
