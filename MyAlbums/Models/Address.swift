@@ -21,7 +21,5 @@ extension Address: Codable {
 }
 
 extension Address: CustomStringConvertible {
-	var description: String {
-		return "\(street), \(suite), \(city), \(zipCode)"
-	}
+	var description: String { "\(street), \(suite), \(city), \(zipCode)" }
 }

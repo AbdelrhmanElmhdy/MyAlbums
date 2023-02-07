@@ -10,14 +10,15 @@ import UIKit
 
 class AlbumCollectionViewCell: UICollectionViewCell {
 	
-	var image: UIImage? = nil {
+	var photo: Photo? {
 		didSet {
-			imageView.image = image
+			guard let photo = photo else { return }
+			imageView.source = URL(string: photo.thumbnailUrl)
 		}
 	}
 	
-	private let imageView: UIImageView = {
-		let imageView = UIImageView()
+	private let imageView: RemoteImageView = {
+		let imageView = RemoteImageView()
 		imageView.contentMode = .scaleAspectFill
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		return imageView

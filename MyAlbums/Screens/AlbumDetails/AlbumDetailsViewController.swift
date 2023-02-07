@@ -12,10 +12,12 @@ class AlbumDetailsViewController: UICollectionViewController {
 		
 	static let cellReuseIdentifier = "ImageCell"
 	
-	private unowned let coordinator: ViewingImage
+	private unowned let coordinator: ViewingPhoto
 	private let viewModel: AlbumDetailsViewModel
 	
-	private let dataSource = AlbumDetailsCollectionViewDataSource()
+	let dataSource = AlbumDetailsCollectionViewDataSource()
+	private(set) lazy var dataBinder = AlbumDetailsViewControllerAndViewModelBinder(viewController: self,
+																																									viewModel: viewModel)
 	private let searchController = UISearchController(searchResultsController: nil)
 	
 	fileprivate let numberOfImagesPerRow: CGFloat = 3
@@ -31,7 +33,7 @@ class AlbumDetailsViewController: UICollectionViewController {
 	
 	// MARK: Initialization
 	
-	init(coordinator: ViewingImage, viewModel: AlbumDetailsViewModel) {
+	init(coordinator: ViewingPhoto, viewModel: AlbumDetailsViewModel) {
 		self.viewModel = viewModel
 		self.coordinator = coordinator
 		
@@ -52,8 +54,10 @@ class AlbumDetailsViewController: UICollectionViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViewController()
+		setupRefreshControl()
 		setupCollectionView()
 		setupSearchController()
+		dataBinder.setupBindings()
 		didRefresh()
 	}
 	
@@ -61,14 +65,18 @@ class AlbumDetailsViewController: UICollectionViewController {
 		view.backgroundColor = .systemBackground
 		definesPresentationContext = true
 	}
+	
+	func setupRefreshControl() {
+		collectionView.refreshControl = UIRefreshControl()
+		collectionView.refreshControl?.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+	}
 		
 	private func setupCollectionView() {
 		collectionView.dataSource = dataSource
-		collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Self.cellReuseIdentifier)
+		collectionView.register(AlbumCollectionViewCell.self, forCellWithReuseIdentifier: Self.cellReuseIdentifier)
 	}
 	
 	private func setupSearchController() {
-		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = .ui.imagesSearchBarPlaceholder
 		navigationItem.searchController = searchController
@@ -77,26 +85,20 @@ class AlbumDetailsViewController: UICollectionViewController {
 	
 	// MARK: Actions
 	
-	func didRefresh() {
-		dataSource.images = [
-			UIImage(named: "image1")!, UIImage(named: "image1")!, UIImage(named: "image1")!,
-			UIImage(named: "image1")!, UIImage(named: "image1")!, UIImage(named: "image1")!,
-			UIImage(named: "image1")!, UIImage(named: "image1")!, UIImage(named: "image1")!,
-			UIImage(named: "image1")!, UIImage(named: "image1")!, UIImage(named: "image1")!,
-			UIImage(named: "image1")!, UIImage(named: "image1")!, UIImage(named: "image1")!,
-		]
-		collectionView.reloadData()
+	@objc func didRefresh() {
+		viewModel.fetchPhotos()
 	}
-		
-	// MARK: Connivence
+}
+
+// MARK: UICollectionViewDelegate
+
+extension AlbumDetailsViewController {
 	
-	fileprivate func filterContentForSearchText(_ searchText: String) {
-		dataSource.filteredImages = dataSource.images.filter({( image: UIImage) -> Bool in
-			return image.description.lowercased().contains(searchText.lowercased())
-		})
-		
-		collectionView.reloadData()
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let photo = dataSource.isFiltering ? dataSource.filteredPhotos[indexPath.row] : dataSource.photos[indexPath.row]
+		coordinator.viewPhoto(photo)
 	}
+		
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -123,12 +125,4 @@ extension AlbumDetailsViewController: UICollectionViewDelegateFlowLayout {
 		return sectionInsets
 	}
 
-}
-
-// MARK: UISearchResultsUpdating
-extension AlbumDetailsViewController: UISearchResultsUpdating {
-	func updateSearchResults(for searchController: UISearchController) {
-		filterContentForSearchText(searchController.searchBar.text ?? "")
-	}
-	
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileCoordinator: Coordinator, ViewingAlbumDetails, ViewingImage {
+class ProfileCoordinator: Coordinator, ViewingAlbumDetails, ViewingPhoto {
 	var children = Array<Coordinator>()
 	let navigationController: UINavigationController
 	let viewControllersFactory: ViewControllersFactory
@@ -34,7 +34,7 @@ class ProfileCoordinator: Coordinator, ViewingAlbumDetails, ViewingImage {
 		navigationController.pushViewController(albumDetailsVC, animated: true)
 	}
 	
-	func viewImage() {
-		
+	func viewPhoto(_ photo: Photo) {
+		navigationController.pushViewController(PhotoDetailsViewController(selectedPhoto: photo), animated: true)
 	}
 }

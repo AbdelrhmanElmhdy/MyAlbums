@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct UITextsContainer {
 	// MARK: Profile Screen UI Texts
 	

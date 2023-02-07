@@ -6,6 +6,15 @@
   
 */
 
+// MARK: UI
+
 "Profile" = "الصفحة الشخصية";
 "Settings" = "الإعدادات";
 "My Albums" = "ألبوماتي";
+
+
+// MARK: Errors
+
+"No Internet Connection" = "لا يوجد اتصال بالإنترنت";
+"Something went wrong!" = "حدث خطأ ما";
+"Try again later" = "حاول مجددًا";

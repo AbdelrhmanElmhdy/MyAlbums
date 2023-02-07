@@ -22,7 +22,7 @@ extension MainViewControllersFactory: ProfileViewControllersFactory {
 		return ProfileViewController(coordinator: coordinator, viewModel: viewModel)
 	}
 	
-	func makeAlbumDetailsViewController(for coordinator: ViewingImage, album: Album) -> AlbumDetailsViewController {
+	func makeAlbumDetailsViewController(for coordinator: ViewingPhoto, album: Album) -> AlbumDetailsViewController {
 		let viewModel = AlbumDetailsViewModel(album: album)
 		return AlbumDetailsViewController(coordinator: coordinator, viewModel: viewModel)
 	}

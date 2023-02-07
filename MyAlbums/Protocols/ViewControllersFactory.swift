@@ -9,7 +9,7 @@ import Foundation
 
 protocol ProfileViewControllersFactory: AnyObject {
 	func makeProfileViewController(for coordinator: ViewingAlbumDetails) -> ProfileViewController
-	func makeAlbumDetailsViewController(for coordinator: ViewingImage, album: Album) -> AlbumDetailsViewController
+	func makeAlbumDetailsViewController(for coordinator: ViewingPhoto, album: Album) -> AlbumDetailsViewController
 }
 
 protocol SettingsViewControllersFactory: AnyObject {

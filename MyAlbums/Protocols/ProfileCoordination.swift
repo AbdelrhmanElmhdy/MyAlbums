@@ -11,6 +11,6 @@ protocol ViewingAlbumDetails: AnyObject {
 	func viewAlbumDetails(_ album: Album)
 }
 
-protocol ViewingImage: AnyObject {
-	func viewImage()
+protocol ViewingPhoto: AnyObject {
+	func viewPhoto(_ photo: Photo)
 }

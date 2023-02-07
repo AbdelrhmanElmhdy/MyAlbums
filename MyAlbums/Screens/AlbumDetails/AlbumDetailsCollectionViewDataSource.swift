@@ -11,23 +11,35 @@ import UIKit
 
 class AlbumDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 	// MARK: Properties
+			
+	let placeHolderPhotos = Array(repeating: Photo(id: 0, albumId: 0, title: "", thumbnailUrl: "", url: ""), count: 8)
 	
-	var isFiltering = false
+	lazy var photos: [Photo] = placeHolderPhotos
+	var filteredPhotos: [Photo] = []
 	
-	var images: [UIImage] = []
-	var filteredImages: [UIImage] = []
+	var searchText = "" {
+		didSet {
+			filteredPhotos = photos.filter({( photo: Photo) -> Bool in
+				photo.title.lowercased().contains(searchText.lowercased())
+			})
+		}
+	}
 	
+	var isFiltering: Bool { !searchText.isEmpty }
+		
 	// MARK: DataSource
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return isFiltering ? filteredImages.count : images.count
+		return isFiltering ? filteredPhotos.count : photos.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumDetailsViewController.imageReuseIdentifier",
-																									for: indexPath) as! AlbumCollectionViewCell
+		let cell = collectionView.dequeueReusableCell(
+			withReuseIdentifier: AlbumDetailsViewController.cellReuseIdentifier,
+			for: indexPath
+		) as! AlbumCollectionViewCell
 		
-		cell.image = isFiltering ? filteredImages[indexPath.row] : images[indexPath.row]
+		cell.photo = isFiltering ? filteredPhotos[indexPath.row] : photos[indexPath.row]
 		return cell
 	}
 	

@@ -16,7 +16,11 @@ class ProfileViewController: UITableViewController {
 	private unowned let coordinator: ViewingAlbumDetails
 	private let viewModel: ProfileViewModel
 	
-	private let dataSource = ProfileTableViewDataSource()
+	let dataSource = ProfileTableViewDataSource()
+	
+	private lazy var dataBinder = ProfileViewControllerAndViewModelBinder(viewController: self, viewModel: viewModel)
+	
+	let header = ProfileHeader(frame: CGRect(x: 0, y: 0, width: 0, height: 125))
 	
 	// MARK: Initialization
 	
@@ -34,13 +38,12 @@ class ProfileViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		title = .ui.profile
-		view.backgroundColor = .systemBackground
-		
-		tableView.dataSource = dataSource
-		updateData()
-		tableView.register(ProfileHeader.self, forHeaderFooterViewReuseIdentifier: Self.headerReuseIdentifier)
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: Self.albumCellReuseIdentifier)
+		setupViewController()
+		setupRefreshControl()
+		setupTableView()
+		setupHeader()
+		dataBinder.setupBindings()
+		startRefreshing()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -48,23 +51,58 @@ class ProfileViewController: UITableViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
 	}
+		
+	// MARK: Setups
 	
-	func updateData() {
-		viewModel.fetchUserData()
-		dataSource.albums = [
-			Album(id: 1, title: "Test 1"),
-			Album(id: 2, title: "Test 2"),
-			Album(id: 3, title: "Test 3"),
-			Album(id: 4, title: "Test 4"),
-		]
-		tableView.reloadData()
+	func setupViewController() {
+		title = .ui.profile
+		view.backgroundColor = .systemBackground
 	}
 	
-
+	func setupRefreshControl() {
+		refreshControl = UIRefreshControl()
+		refreshControl?.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+	}
+	
+	func setupTableView() {
+		tableView.dataSource = dataSource
+		tableView.register(ProfileTableViewSectionHeader.self, forHeaderFooterViewReuseIdentifier: Self.headerReuseIdentifier)
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: Self.albumCellReuseIdentifier)
+	}
+	
+	func setupHeader() {		
+		header.contentView.backgroundColor = .systemGray6
+		header.contentView.layer.cornerRadius = 10
+		
+		tableView.tableHeaderView = header
+	}
+	
+	// MARK: Actions
+	
+	@objc func didRefresh() {
+		viewModel.refreshData()
+	}
+	
+	// MARK: Connivence
+	
+	func startRefreshing() {
+		DispatchQueue.main.async() {
+			self.didRefresh()
+			self.didRefresh()
+			self.didRefresh()
+			self.didRefresh()
+			self.didRefresh()
+			self.didRefresh()
+		}
+	}
+	
+	
+	// MARK: UITableViewDelegate
+	
 	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: Self.headerReuseIdentifier) as! ProfileHeader
-		header.nameLabel.text = "Abdelrhman"
-		header.addressLabel.text = "Egypt"
+		let header = tableView.dequeueReusableHeaderFooterView(
+			withIdentifier: Self.headerReuseIdentifier
+		) as! ProfileTableViewSectionHeader
 		header.sectionTitle.text = .ui.albumsTableViewTitle
 		return header
 	}

@@ -8,23 +8,34 @@
 import Combine
 
 class AlbumDetailsViewModel {
+	let photoServices = PhotoServices()
+	
+	var photosSubscription: AnyCancellable?
+	
 	// MARK: State
 	
-	@Published var albumID: Int = -1
-	@Published var title: String = ""
+	let albumId: Int
+	let title: String
+	@Published var photos: [Photo] = []
 	@Published var isLoading: Bool = false
 	@Published var searchText: String = ""
 	
 	// MARK: Initialization
 	
 	init(album: Album) {
-		self.albumID = album.id
+		self.albumId = album.id
 		self.title = album.title
 	}
 	
 	// MARK: Logic
 	
-	func fetchImages() {
+	func fetchPhotos() {
+		isLoading = true
 		
+		photosSubscription = photoServices.fetchPhotos(forAlbumId: albumId)
+			.sink(receiveCompletion: { _ in }, receiveValue: { [weak self] photos in
+				self?.photos = photos
+				self?.isLoading = false
+			})
 	}
 }

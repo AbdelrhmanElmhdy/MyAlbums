@@ -7,47 +7,51 @@
 
 import UIKit
 
-class ProfileHeader: UITableViewHeaderFooterView {
+class ProfileHeader: UIView {
 	// MARK: Properties
+	
+	let contentView = UIView()
 	
 	let nameLabel: UILabel = {
 		let label = UILabel()
-		label.numberOfLines = 0
+		
+		label.numberOfLines = 2
+		label.minimumScaleFactor = 0.7
+		label.adjustsFontSizeToFitWidth = true
 		label.font = .systemFont(ofSize: 18, weight: .bold)
+		label.textColor = .label
+		
 		return label
 	}()
 	
 	let addressLabel: UILabel = {
 		let label = UILabel()
-		label.numberOfLines = 0
+		
+		label.numberOfLines = 3
+		label.minimumScaleFactor = 0.7
+		label.adjustsFontSizeToFitWidth = true
 		label.font = .systemFont(ofSize: 18)
+		label.textColor = .secondaryLabel
+		
 		return label
 	}()
-	
-	let sectionTitle: UILabel = {
-		let label = UILabel()
-		label.font = .systemFont(ofSize: 18, weight: .semibold)
-		return label
-	}()
-	
+		
 	private lazy var rootStackView = {
-		let stackView = UIStackView(arrangedSubviews: [nameLabel, addressLabel, sectionTitle])
-
+		let stackView = UIStackView(arrangedSubviews: [nameLabel, addressLabel])
+		
 		stackView.axis = .vertical
 		stackView.distribution = .fill
 		stackView.alignment = .fill
 		stackView.spacing = 6
-		stackView.setCustomSpacing(16, after: addressLabel)
-
-		stackView.translatesAutoresizingMaskIntoConstraints = false
+		
 		return stackView
 	}()
 	
 	// MARK: Initialization
 	
-	override init(reuseIdentifier: String?) {
-		super.init(reuseIdentifier: reuseIdentifier)
-		setup()
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		setupSubviews()
 	}
 	
 	required init?(coder: NSCoder) {
@@ -56,14 +60,32 @@ class ProfileHeader: UITableViewHeaderFooterView {
 	
 	// MARK: View Setup
 	
-	func setup() {
-		contentView.addSubview(rootStackView)
+	func setupSubviews() {
+		setupContentView()
+		setupRootStackView()
+	}
+	
+	func setupContentView() {
+		addSubview(contentView)
+		contentView.translatesAutoresizingMaskIntoConstraints = false
 		
 		NSLayoutConstraint.activate([
-			rootStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-			rootStackView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 15),
-			rootStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-			rootStackView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -25),
+			contentView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+			contentView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
+			contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+			contentView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -15),
+		])
+	}
+	
+	func setupRootStackView() {
+		contentView.addSubview(rootStackView)
+		rootStackView.translatesAutoresizingMaskIntoConstraints = false
+		
+		NSLayoutConstraint.activate([
+			rootStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+			rootStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+			rootStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+			rootStackView.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.95)
 		])
 	}
 }
@@ -77,7 +99,7 @@ import SwiftUI
 struct ProfileHeader_Preview: PreviewProvider {
 	static var previews: some View {
 		UIViewPreview {
-			let header = ProfileHeader(reuseIdentifier: "")
+			let header = ProfileHeader()
 			header.nameLabel.text = "Abdelrhman Elmahdy"
 			header.addressLabel.text = "Cairo, Egypt"
 
