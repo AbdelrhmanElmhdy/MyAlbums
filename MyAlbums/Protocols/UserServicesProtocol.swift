@@ -9,5 +9,5 @@ import Combine
 
 /// Handles all services related to the `User` type
 protocol UserServicesProtocol {
-	func fetchUser(ofId id: Int) -> AnyPublisher<User, Error>
+	func fetchUser(ofId id: Int) -> AnyPublisher<User, NetworkRequestError>
 }

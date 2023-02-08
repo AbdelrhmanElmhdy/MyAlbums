@@ -12,7 +12,19 @@ class ProfileHeader: UIView {
 	
 	let contentView = UIView()
 	
-	let nameLabel: UILabel = {
+	var userName: String = "" {
+		didSet {
+			primaryLabel.text = userName
+		}
+	}
+	
+	var userAddress: String = "" {
+		didSet {
+			secondaryLabel.text = userAddress
+		}
+	}
+	
+	let primaryLabel: UILabel = {
 		let label = UILabel()
 		
 		label.numberOfLines = 2
@@ -24,7 +36,7 @@ class ProfileHeader: UIView {
 		return label
 	}()
 	
-	let addressLabel: UILabel = {
+	let secondaryLabel: UILabel = {
 		let label = UILabel()
 		
 		label.numberOfLines = 3
@@ -35,9 +47,9 @@ class ProfileHeader: UIView {
 		
 		return label
 	}()
-		
+	
 	private lazy var rootStackView = {
-		let stackView = UIStackView(arrangedSubviews: [nameLabel, addressLabel])
+		let stackView = UIStackView(arrangedSubviews: [primaryLabel, secondaryLabel])
 		
 		stackView.axis = .vertical
 		stackView.distribution = .fill
@@ -60,12 +72,12 @@ class ProfileHeader: UIView {
 	
 	// MARK: View Setup
 	
-	func setupSubviews() {
+	private func setupSubviews() {
 		setupContentView()
 		setupRootStackView()
 	}
 	
-	func setupContentView() {
+	private func setupContentView() {
 		addSubview(contentView)
 		contentView.translatesAutoresizingMaskIntoConstraints = false
 		
@@ -77,7 +89,7 @@ class ProfileHeader: UIView {
 		])
 	}
 	
-	func setupRootStackView() {
+	private func setupRootStackView() {
 		contentView.addSubview(rootStackView)
 		rootStackView.translatesAutoresizingMaskIntoConstraints = false
 		
@@ -100,8 +112,8 @@ struct ProfileHeader_Preview: PreviewProvider {
 	static var previews: some View {
 		UIViewPreview {
 			let header = ProfileHeader()
-			header.nameLabel.text = "Abdelrhman Elmahdy"
-			header.addressLabel.text = "Cairo, Egypt"
+			header.userName = "Abdelrhman Elmahdy"
+			header.userAddress = "Cairo, Egypt"
 
 			return header
 		}.previewLayout(.sizeThatFits)

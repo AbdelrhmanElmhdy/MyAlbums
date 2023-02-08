@@ -10,7 +10,7 @@ import Combine
 class UserServices: UserServicesProtocol {
 	private let networkManager = NetworkManager()
 	
-	func fetchUser(ofId id: Int) -> AnyPublisher<User, Error> {
+	func fetchUser(ofId id: Int) -> AnyPublisher<User, NetworkRequestError> {
 		networkManager.executeRequest(.users(id: id))
 	}
 }

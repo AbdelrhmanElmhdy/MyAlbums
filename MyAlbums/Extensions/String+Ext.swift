@@ -18,4 +18,5 @@ extension String {
 extension String {
 	static let ui = UITextsContainer.self
 	static let errors = ErrorTextsContainer.self
+	static let colors = ColorNamesContainer.self
 }

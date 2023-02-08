@@ -15,14 +15,14 @@ class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<
 		viewModel.$userName
 			.receive(on: DispatchQueue.main)
 			.map { $0 }
-			.assign(to: \.text, on: viewController.header.nameLabel, animation: .fade(duration: 0.3))
+			.assign(to: \.userName, on: viewController.header, animation: .fade(duration: 0.3))
 			.store(in: &subscriptions)
 
 		// userAddress
 		viewModel.$userAddress
 			.receive(on: DispatchQueue.main)
 			.map { $0 }
-			.assign(to: \.text, on: viewController.header.addressLabel, animation: .fade(duration: 0.3))
+			.assign(to: \.userAddress, on: viewController.header, animation: .fade(duration: 0.3))
 			.store(in: &subscriptions)
 		
 		// albums
@@ -54,6 +54,37 @@ class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<
 			.assign(to: \.isLoading, on: viewModel)
 			.store(in: &subscriptions)
 		
+		// isPresentingToast
+		viewModel.$isPresentingToast
+			.receive(on: DispatchQueue.main)
+			.sink (receiveValue: { isPresentingToast in
+				if isPresentingToast {
+					// don't try to present it if it's already presented
+					guard self.viewController.toast.isPresented != true else {
+						self.viewController.toast.collapse()
+						return
+					}
+					
+					self.viewController.presentToast(withTitle: self.viewModel.toastTitle,
+																					 andDescription: self.viewModel.toastDetailsDescription,
+																					 animated: true)
+					return
+				}
+				
+				// don't try to dismissed it if it's not presented
+				guard self.viewController.toast.isPresented == true else { return }
+				self.viewController.dismissToast(animated: true)
+			})
+			.store(in: &subscriptions)
+		
+		// isToastExpanded
+		viewController.toast.$isExpanded.assign(to: \.isToastExpanded, on: viewModel).store(in: &subscriptions)
+		
+		// toastTitle
+		viewModel.$toastTitle.assign(to: \.title, on: viewController.toast).store(in: &subscriptions)
+		
+		// toastDetailsDescription
+		viewModel.$toastDetailsDescription.assign(to: \.detailsDescription, on: viewController.toast).store(in: &subscriptions)
 		
 	}
 	

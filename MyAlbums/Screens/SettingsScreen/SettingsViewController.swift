@@ -25,7 +25,7 @@ struct SettingsViewController_Preview: PreviewProvider {
 	static var previews: some View {
 		ForEach(DEVICE_NAMES, id: \.self) { deviceName in
 			UIViewControllerPreview {
-				AppDelegate.shared.viewControllersFactory.makeSettingsViewController(for: SettingsCoordinatorMock(),
+				AppDelegate.shared.viewControllersFactory.makeSettingsViewController(for: SettingsStackCoordinatorMock(),
 																																						 settingsSections: [])
 			}.previewDevice(PreviewDevice(rawValue: deviceName))
 				.previewDisplayName(deviceName)

@@ -6,8 +6,42 @@
 //
 
 import Foundation
+import Moya
 
-public enum NetworkRequestError : UserFriendlyError {
+enum NetworkRequestError : UserFriendlyError {
+	init(moyaError: MoyaError) {
+		switch moyaError.errorCode {
+		case 6: self = .failedToConnectToInternet()
+		// .
+		// .
+		// .
+		// TODO: Add support for all relevant error codes.
+		// .
+		// .
+		// .
+		default: self = .somethingWentWrong(description: moyaError.localizedDescription)
+		}
+	}
+	
+	init(error: Error) {
+		self = .somethingWentWrong(description: "\(type(of: error)): \(error.localizedDescription)")
+	}
+	
+	case somethingWentWrong(description: String,
+													userFriendlyDescription: String? = nil,
+													userFriendlyAdvice: String? = nil,
+													isFatal: Bool = true)
+	
+	case failedToConnectToInternet(description: String = "Failed to connect to internet",
+																 userFriendlyDescription: String? = .errors.noInternetConnection,
+																 userFriendlyAdvice: String? = .errors.checkInternetConnectionAdvice,
+																 isFatal: Bool = false)
+	
+	case requestTimedOut(description: String = "Request timed out",
+											 userFriendlyDescription: String? = .errors.noInternetConnection,
+											 userFriendlyAdvice: String? = .errors.checkInternetConnectionAdvice,
+											 isFatal: Bool = false)
+	
 	case failedToDecode(description: String,
 											userFriendlyDescription: String? = nil,
 											userFriendlyAdvice: String? = nil,
@@ -23,7 +57,10 @@ public enum NetworkRequestError : UserFriendlyError {
 	
 	var associatedValues: (description: String, userFriendlyDescription: String, userFriendlyAdvice: String, isFatal: Bool) {
 		switch self {
-		case let .failedToDecode(description, userFriendlyDescription, userFriendlyAdvice, isFatal),
+		case let .somethingWentWrong(description, userFriendlyDescription, userFriendlyAdvice, isFatal),
+			let .failedToConnectToInternet(description, userFriendlyDescription, userFriendlyAdvice, isFatal),
+			let .requestTimedOut(description, userFriendlyDescription, userFriendlyAdvice, isFatal),
+			let .failedToDecode(description, userFriendlyDescription, userFriendlyAdvice, isFatal),
 			let .failedToEncode(description, userFriendlyDescription, userFriendlyAdvice, isFatal):
 			return (description,
 							userFriendlyDescription ?? defaultUserFriendlyDescription,

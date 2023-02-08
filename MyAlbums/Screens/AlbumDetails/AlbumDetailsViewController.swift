@@ -126,3 +126,22 @@ extension AlbumDetailsViewController: UICollectionViewDelegateFlowLayout {
 	}
 
 }
+
+// MARK: Preview
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct AlbumDetailsViewController_Preview: PreviewProvider {
+	static var previews: some View {
+		ForEach(DEVICE_NAMES, id: \.self) { deviceName in
+			UIViewControllerPreview {
+				AppDelegate.shared.viewControllersFactory.makeAlbumDetailsViewController(for: ProfileStackCoordinatorMock(),
+																																								 album: Album(id: 0, title: ""))
+			}.previewDevice(PreviewDevice(rawValue: deviceName))
+				.previewDisplayName(deviceName)
+		}
+	}
+}
+#endif

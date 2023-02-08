@@ -49,7 +49,6 @@ class AlbumDetailsViewControllerAndViewModelBinder: ViewControllerAndViewModelBi
 		viewController.navigationItem.searchController?.searchBar.textDidChangePublisher
 			.debounce(for: 0.15, scheduler: RunLoop.main)
 			.sink{ [weak self] searchText in
-				print(#function)
 				self?.viewModel.searchText = searchText
 				self?.viewController.dataSource.searchText = searchText
 				self?.viewController.collectionView.reloadData()

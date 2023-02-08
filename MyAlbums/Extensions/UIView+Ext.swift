@@ -30,5 +30,15 @@ extension UIView {
 			trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: trailing),
 		])
 	}
+	
+	func tearDown() {
+		for subview in self.subviews {
+			subview.tearDown()
+		}
+		
+		self.removeFromSuperview()
+		NSLayoutConstraint.deactivate(self.constraints)
+		self.removeConstraints(self.constraints)
+	}
 
 }

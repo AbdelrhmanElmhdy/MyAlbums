@@ -9,5 +9,5 @@ import Combine
 
 /// Handles all services related to the `Album` type
 protocol AlbumServicesProtocol {
-	func fetchAlbums(forUserId userId: Int) -> AnyPublisher<[Album], Error>
+	func fetchAlbums(forUserId userId: Int) -> AnyPublisher<[Album], NetworkRequestError>
 }

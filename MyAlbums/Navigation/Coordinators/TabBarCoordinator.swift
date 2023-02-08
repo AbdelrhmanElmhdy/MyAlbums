@@ -27,16 +27,16 @@ class TabBarCoordinator: Coordinator {
 			settingsNavigationController
 		]
 		
-		let profileCoordinator = ProfileCoordinator(navigationController: profileNavigationController,
+		let profileStackCoordinator = ProfileStackCoordinator(navigationController: profileNavigationController,
 																								viewControllersFactory: viewControllersFactory,
 																								parentCoordinator: self)
 		
-		let settingsCoordinator = SettingsCoordinator(navigationController: settingsNavigationController,
+		let settingsStackCoordinator = SettingsStackCoordinator(navigationController: settingsNavigationController,
 																									viewControllersFactory: viewControllersFactory,
 																									parentCoordinator: self)
 		
-		startChild(profileCoordinator)
-		startChild(settingsCoordinator)
+		startChild(profileStackCoordinator)
+		startChild(settingsStackCoordinator)
 		
 		navigationController.pushViewController(rootTabBarController, animated: false)
 	}

@@ -9,5 +9,5 @@ import Combine
 
 /// Handles all services related to the `Photo` type
 protocol PhotoServicesProtocol {
-	func fetchPhotos(forAlbumId: Int) -> AnyPublisher<[Photo], Error>
+	func fetchPhotos(forAlbumId: Int) -> AnyPublisher<[Photo], NetworkRequestError>
 }

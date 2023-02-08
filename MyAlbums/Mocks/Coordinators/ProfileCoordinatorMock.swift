@@ -1,5 +1,5 @@
 //
-//  ProfileCoordinatorMock.swift
+//  ProfileStackCoordinatorMock.swift
 //  MyAlbums
 //
 //  Created by Abdelrhman Elmahdy on 05/02/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileCoordinatorMock: Coordinator, ViewingAlbumDetails {
+class ProfileStackCoordinatorMock: Coordinator, ViewingAlbumDetails, ViewingPhoto {
 	var children = Array<Coordinator>()
 	let navigationController = UINavigationController()
 	
@@ -16,6 +16,10 @@ class ProfileCoordinatorMock: Coordinator, ViewingAlbumDetails {
 	}
 	
 	func viewAlbumDetails(_ album: Album) {
+		
+	}
+	
+	func viewPhoto(_ photo: Photo) {
 		
 	}
 	

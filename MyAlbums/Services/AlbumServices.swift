@@ -10,7 +10,7 @@ import Combine
 class AlbumServices: AlbumServicesProtocol {
 	private let networkManager = NetworkManager()
 	
-	func fetchAlbums(forUserId userId: Int) -> AnyPublisher<[Album], Error> {
+	func fetchAlbums(forUserId userId: Int) -> AnyPublisher<[Album], NetworkRequestError> {
 		networkManager.executeRequest(.albums(forUserId: userId))
 	}
 }

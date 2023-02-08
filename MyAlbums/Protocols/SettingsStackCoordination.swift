@@ -1,5 +1,5 @@
 //
-//  SettingsCoordination.swift
+//  SettingsStackCoordination.swift
 //  MyAlbums
 //
 //  Created by Abdelrhman Elmahdy on 05/02/2023.

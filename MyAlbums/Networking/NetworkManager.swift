@@ -13,7 +13,7 @@ import CombineMoya
 class NetworkManager {
 	private let APIProvider = MoyaProvider<API>()
 	
-	func executeRequest<T: Decodable>(_ target: API) -> AnyPublisher<T, Error> {
+	func executeRequest<T: Decodable>(_ target: API) -> AnyPublisher<T, NetworkRequestError> {
 		return APIProvider.requestPublisher(target)
 			.tryMap { response in
 				guard (200...299) ~= response.statusCode else {
@@ -24,12 +24,16 @@ class NetworkManager {
 			}
 			.map(\.data)
 			.decode(type: T.self, decoder: JSONDecoder())
-			.mapError {
-				if let error = $0 as? UserFriendlyError {
+			.mapError { error in
+				if let error = error as? NetworkRequestError {
 					return error
 				}
 				
-				return GenericError.somethingWentWrong(description: "\(type(of: $0)): \($0.localizedDescription)")
+				if let error = error as? MoyaError {
+					return NetworkRequestError(moyaError: error)
+				}
+								
+				return NetworkRequestError(error: error)
 			}
 			.eraseToAnyPublisher()
 	}

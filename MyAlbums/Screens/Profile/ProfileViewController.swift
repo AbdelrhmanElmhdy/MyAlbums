@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UITableViewController {
+class ProfileViewController: UITableViewController, PresentsToast {
 	// MARK: Properties
 	
 	static let headerReuseIdentifier = "headerReuseIdentifier"
@@ -20,6 +20,7 @@ class ProfileViewController: UITableViewController {
 	
 	private lazy var dataBinder = ProfileViewControllerAndViewModelBinder(viewController: self, viewModel: viewModel)
 	
+	var toast: Toast = Toast()
 	let header = ProfileHeader(frame: CGRect(x: 0, y: 0, width: 0, height: 125))
 	
 	// MARK: Initialization
@@ -51,6 +52,12 @@ class ProfileViewController: UITableViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
 	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		viewModel.isPresentingToast = false
+	}
+
 		
 	// MARK: Setups
 	
@@ -88,14 +95,8 @@ class ProfileViewController: UITableViewController {
 	func startRefreshing() {
 		DispatchQueue.main.async() {
 			self.didRefresh()
-			self.didRefresh()
-			self.didRefresh()
-			self.didRefresh()
-			self.didRefresh()
-			self.didRefresh()
 		}
 	}
-	
 	
 	// MARK: UITableViewDelegate
 	
@@ -123,7 +124,7 @@ struct ProfileViewController_Preview: PreviewProvider {
 	static var previews: some View {
 		ForEach(DEVICE_NAMES, id: \.self) { deviceName in
 			UIViewControllerPreview {
-				AppDelegate.shared.viewControllersFactory.makeProfileViewController(for: ProfileCoordinatorMock())
+				AppDelegate.shared.viewControllersFactory.makeProfileViewController(for: ProfileStackCoordinatorMock())
 			}.previewDevice(PreviewDevice(rawValue: deviceName))
 				.previewDisplayName(deviceName)
 		}

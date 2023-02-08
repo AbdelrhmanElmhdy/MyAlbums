@@ -12,4 +12,5 @@ import UIKit
 extension UIImage {
 	static let userIcon = UIImage(systemName: "person.fill")!
 	static let gear = UIImage(systemName: "gear")!
+	static let info = UIImage(systemName: "info.circle")!
 }

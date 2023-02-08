@@ -24,7 +24,7 @@
 		BC6625EB2990131F00ED94D5 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625EA2990131F00ED94D5 /* String+Ext.swift */; };
 		BC6625EE2990139F00ED94D5 /* UITextsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625ED2990139F00ED94D5 /* UITextsContainer.swift */; };
 		BC6625F12990151900ED94D5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625F02990151900ED94D5 /* Coordinator.swift */; };
-		BC6625F3299015BA00ED94D5 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625F2299015BA00ED94D5 /* ProfileCoordinator.swift */; };
+		BC6625F3299015BA00ED94D5 /* ProfileStackCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625F2299015BA00ED94D5 /* ProfileStackCoordinatorMock.swift */; };
 		BC6625F62990206800ED94D5 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625F52990206800ED94D5 /* DependencyContainer.swift */; };
 		BC6625F92990211800ED94D5 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625F82990211800ED94D5 /* UserDefaultsManager.swift */; };
 		BC6625FD299025A800ED94D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC6625FF299025A800ED94D5 /* Localizable.strings */; };
@@ -35,15 +35,20 @@
 		BC66260E2990369100ED94D5 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66260D2990369100ED94D5 /* RootTabBarController.swift */; };
 		BC662610299036E600ED94D5 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66260F299036E600ED94D5 /* TabBarCoordinator.swift */; };
 		BC662613299037CB00ED94D5 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC662612299037CB00ED94D5 /* ViewControllersFactory.swift */; };
-		BC6626152990387C00ED94D5 /* ProfileCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6626142990387C00ED94D5 /* ProfileCoordination.swift */; };
-		BC662617299038E600ED94D5 /* SettingsCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC662616299038E600ED94D5 /* SettingsCoordination.swift */; };
+		BC6626152990387C00ED94D5 /* ProfileStackCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6626142990387C00ED94D5 /* ProfileStackCoordination.swift */; };
+		BC662617299038E600ED94D5 /* SettingsStackCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC662616299038E600ED94D5 /* SettingsStackCoordination.swift */; };
 		BC66261B29903AED00ED94D5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66261A29903AED00ED94D5 /* SettingsViewController.swift */; };
 		BC66261D29903BAE00ED94D5 /* SwiftUIPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66261C29903BAE00ED94D5 /* SwiftUIPreview.swift */; };
 		BC66262029903CE900ED94D5 /* MainViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66261F29903CE900ED94D5 /* MainViewControllersFactory.swift */; };
 		BC66262329903E5000ED94D5 /* SettingsCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66262229903E5000ED94D5 /* SettingsCoordinatorMock.swift */; };
 		BC66262629903EA600ED94D5 /* ProfileCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66262529903EA500ED94D5 /* ProfileCoordinatorMock.swift */; };
-		BC6626292990435700ED94D5 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6626282990435700ED94D5 /* SettingsCoordinator.swift */; };
+		BC6626292990435700ED94D5 /* SettingsStackCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6626282990435700ED94D5 /* SettingsStackCoordinator.swift */; };
 		BC66262B2990458200ED94D5 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66262A2990458200ED94D5 /* UIImage+Ext.swift */; };
+		BCA8B741299258940062C3E5 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B740299258940062C3E5 /* Toast.swift */; };
+		BCA8B7432992614C0062C3E5 /* PresentsToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B7422992614C0062C3E5 /* PresentsToast.swift */; };
+		BCA8B745299261670062C3E5 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B744299261670062C3E5 /* UIColor+Ext.swift */; };
+		BCA8B747299261870062C3E5 /* ColorNamesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B746299261870062C3E5 /* ColorNamesContainer.swift */; };
+		BCA8B74929930D400062C3E5 /* ToastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B74829930D3F0062C3E5 /* ToastDelegate.swift */; };
 		BCB37D632990CE8E00D6C671 /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D622990CE8E00D6C671 /* AlbumDetailsViewModel.swift */; };
 		BCB37D652990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D642990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift */; };
 		BCB37D692990D0AE00D6C671 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D682990D0AE00D6C671 /* AlbumCollectionViewCell.swift */; };
@@ -114,7 +119,7 @@
 		BC6625EA2990131F00ED94D5 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		BC6625ED2990139F00ED94D5 /* UITextsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextsContainer.swift; sourceTree = "<group>"; };
 		BC6625F02990151900ED94D5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		BC6625F2299015BA00ED94D5 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		BC6625F2299015BA00ED94D5 /* ProfileStackCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStackCoordinatorMock.swift; sourceTree = "<group>"; };
 		BC6625F52990206800ED94D5 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		BC6625F82990211800ED94D5 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		BC6625FA2990243D00ED94D5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -127,15 +132,20 @@
 		BC66260D2990369100ED94D5 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		BC66260F299036E600ED94D5 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		BC662612299037CB00ED94D5 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
-		BC6626142990387C00ED94D5 /* ProfileCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordination.swift; sourceTree = "<group>"; };
-		BC662616299038E600ED94D5 /* SettingsCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordination.swift; sourceTree = "<group>"; };
+		BC6626142990387C00ED94D5 /* ProfileStackCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStackCoordination.swift; sourceTree = "<group>"; };
+		BC662616299038E600ED94D5 /* SettingsStackCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStackCoordination.swift; sourceTree = "<group>"; };
 		BC66261A29903AED00ED94D5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BC66261C29903BAE00ED94D5 /* SwiftUIPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreview.swift; sourceTree = "<group>"; };
 		BC66261F29903CE900ED94D5 /* MainViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllersFactory.swift; sourceTree = "<group>"; };
 		BC66262229903E5000ED94D5 /* SettingsCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinatorMock.swift; sourceTree = "<group>"; };
 		BC66262529903EA500ED94D5 /* ProfileCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorMock.swift; sourceTree = "<group>"; };
-		BC6626282990435700ED94D5 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		BC6626282990435700ED94D5 /* SettingsStackCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStackCoordinator.swift; sourceTree = "<group>"; };
 		BC66262A2990458200ED94D5 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		BCA8B740299258940062C3E5 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		BCA8B7422992614C0062C3E5 /* PresentsToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentsToast.swift; sourceTree = "<group>"; };
+		BCA8B744299261670062C3E5 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		BCA8B746299261870062C3E5 /* ColorNamesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNamesContainer.swift; sourceTree = "<group>"; };
+		BCA8B74829930D3F0062C3E5 /* ToastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastDelegate.swift; sourceTree = "<group>"; };
 		BCB37D622990CE8E00D6C671 /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
 		BCB37D642990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		BCB37D682990D0AE00D6C671 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -316,6 +326,7 @@
 				BC66262A2990458200ED94D5 /* UIImage+Ext.swift */,
 				BCB37D6A2990D58C00D6C671 /* UIView+Ext.swift */,
 				BCB37DBB2991CE9A00D6C671 /* UIRefreshControl+Ext.swift */,
+				BCA8B744299261670062C3E5 /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,6 +336,7 @@
 			children = (
 				BC6625ED2990139F00ED94D5 /* UITextsContainer.swift */,
 				BCB37DC82991EF1200D6C671 /* ErrorTextsContainer.swift */,
+				BCA8B746299261870062C3E5 /* ColorNamesContainer.swift */,
 				BC6625FF299025A800ED94D5 /* Localizable.strings */,
 			);
 			path = Constants;
@@ -373,13 +385,15 @@
 				BC66260529902B5900ED94D5 /* NetworkingManagerProtocol.swift */,
 				BC66260729902B7D00ED94D5 /* UserDefaultsManagerProtocol.swift */,
 				BC662612299037CB00ED94D5 /* ViewControllersFactory.swift */,
-				BC6626142990387C00ED94D5 /* ProfileCoordination.swift */,
-				BC662616299038E600ED94D5 /* SettingsCoordination.swift */,
+				BC6626142990387C00ED94D5 /* ProfileStackCoordination.swift */,
+				BC662616299038E600ED94D5 /* SettingsStackCoordination.swift */,
 				BCB37DB92991C56900D6C671 /* ViewControllerAndViewModelBinder.swift */,
 				BCB37DBF2991DB3200D6C671 /* UserServicesProtocol.swift */,
 				BCB37DC12991DB4C00D6C671 /* AlbumServicesProtocol.swift */,
 				BCB37DCE29921C9A00D6C671 /* PhotoServicesProtocol.swift */,
 				BCB37DC62991EED700D6C671 /* UserFriendlyError.swift */,
+				BCA8B7422992614C0062C3E5 /* PresentsToast.swift */,
+				BCA8B74829930D3F0062C3E5 /* ToastDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -388,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				BC66260B29902C3700ED94D5 /* StorageWrapper.swift */,
+				BCA8B740299258940062C3E5 /* Toast.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -438,8 +453,8 @@
 			isa = PBXGroup;
 			children = (
 				BC66260F299036E600ED94D5 /* TabBarCoordinator.swift */,
-				BC6625F2299015BA00ED94D5 /* ProfileCoordinator.swift */,
-				BC6626282990435700ED94D5 /* SettingsCoordinator.swift */,
+				BC6625F2299015BA00ED94D5 /* ProfileStackCoordinatorMock.swift */,
+				BC6626282990435700ED94D5 /* SettingsStackCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -613,41 +628,46 @@
 				BCB37DBC2991CE9A00D6C671 /* UIRefreshControl+Ext.swift in Sources */,
 				BC66260829902B7D00ED94D5 /* UserDefaultsManagerProtocol.swift in Sources */,
 				BC3D267629905D6F00948490 /* PhotoDetailsViewController.swift in Sources */,
-				BC6626292990435700ED94D5 /* SettingsCoordinator.swift in Sources */,
+				BC6626292990435700ED94D5 /* SettingsStackCoordinator.swift in Sources */,
 				BC662613299037CB00ED94D5 /* ViewControllersFactory.swift in Sources */,
 				BC66260E2990369100ED94D5 /* RootTabBarController.swift in Sources */,
 				BCD1AFEA2990774100CFDDD4 /* ProfileTableViewDataSource.swift in Sources */,
 				BC6625BA298FF9FD00ED94D5 /* ProfileViewController.swift in Sources */,
 				BCB37DB82991C4F100D6C671 /* ProfileViewControllerAndViewModelBinder.swift in Sources */,
 				BCB37DBA2991C56900D6C671 /* ViewControllerAndViewModelBinder.swift in Sources */,
-				BC6626152990387C00ED94D5 /* ProfileCoordination.swift in Sources */,
+				BC6626152990387C00ED94D5 /* ProfileStackCoordination.swift in Sources */,
 				BCB37DBE2991DAEA00D6C671 /* UserServices.swift in Sources */,
 				BCB37DB32991C13400D6C671 /* Photo.swift in Sources */,
 				BC3D2679299061B200948490 /* User.swift in Sources */,
 				BC3D267429905D4700948490 /* AlbumDetailsViewController.swift in Sources */,
 				BC66261B29903AED00ED94D5 /* SettingsViewController.swift in Sources */,
-				BC6625F3299015BA00ED94D5 /* ProfileCoordinator.swift in Sources */,
+				BC6625F3299015BA00ED94D5 /* ProfileStackCoordinatorMock.swift in Sources */,
 				BCB37D6B2990D58C00D6C671 /* UIView+Ext.swift in Sources */,
 				BCB37DC22991DB4C00D6C671 /* AlbumServicesProtocol.swift in Sources */,
+				BCA8B741299258940062C3E5 /* Toast.swift in Sources */,
 				BC66262629903EA600ED94D5 /* ProfileCoordinatorMock.swift in Sources */,
 				BC3D267229905B5E00948490 /* ProfileViewModel.swift in Sources */,
 				BCB37D632990CE8E00D6C671 /* AlbumDetailsViewModel.swift in Sources */,
+				BCA8B747299261870062C3E5 /* ColorNamesContainer.swift in Sources */,
 				BC66262329903E5000ED94D5 /* SettingsCoordinatorMock.swift in Sources */,
 				BCB37DC72991EED700D6C671 /* UserFriendlyError.swift in Sources */,
 				BCB37DCD29920FD300D6C671 /* AlbumServices.swift in Sources */,
 				BC66260C29902C3700ED94D5 /* StorageWrapper.swift in Sources */,
-				BC662617299038E600ED94D5 /* SettingsCoordination.swift in Sources */,
+				BC662617299038E600ED94D5 /* SettingsStackCoordination.swift in Sources */,
 				BCB37DC52991EE7E00D6C671 /* NetworkRequestError.swift in Sources */,
 				BC66260329902A5D00ED94D5 /* NetworkManager.swift in Sources */,
 				BCB37DC02991DB3200D6C671 /* UserServicesProtocol.swift in Sources */,
 				BC6625EE2990139F00ED94D5 /* UITextsContainer.swift in Sources */,
+				BCA8B74929930D400062C3E5 /* ToastDelegate.swift in Sources */,
 				BC6625F12990151900ED94D5 /* Coordinator.swift in Sources */,
 				BCB37DC92991EF1200D6C671 /* ErrorTextsContainer.swift in Sources */,
 				BC662610299036E600ED94D5 /* TabBarCoordinator.swift in Sources */,
 				BC6625B6298FF9FD00ED94D5 /* AppDelegate.swift in Sources */,
 				BCB37DD5299220C800D6C671 /* RemoteImageView.swift in Sources */,
 				BCB37D692990D0AE00D6C671 /* AlbumCollectionViewCell.swift in Sources */,
+				BCA8B7432992614C0062C3E5 /* PresentsToast.swift in Sources */,
 				BC66260629902B5900ED94D5 /* NetworkingManagerProtocol.swift in Sources */,
+				BCA8B745299261670062C3E5 /* UIColor+Ext.swift in Sources */,
 				BC6625F92990211800ED94D5 /* UserDefaultsManager.swift in Sources */,
 				BCB37DCB2991F6C200D6C671 /* GenericError.swift in Sources */,
 				BCB37DA929919E6F00D6C671 /* ProfileTableViewSectionHeader.swift in Sources */,

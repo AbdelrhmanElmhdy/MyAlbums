@@ -1,5 +1,5 @@
 //
-//  ProfileCoordinator.swift
+//  SettingsStackCoordinator.swift
 //  MyAlbums
 //
 //  Created by Abdelrhman Elmahdy on 05/02/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileCoordinator: Coordinator, ViewingAlbumDetails, ViewingPhoto {
+class SettingsStackCoordinator: Coordinator, DisclosingSettings {
 	var children = Array<Coordinator>()
 	let navigationController: UINavigationController
 	let viewControllersFactory: ViewControllersFactory
@@ -22,19 +22,11 @@ class ProfileCoordinator: Coordinator, ViewingAlbumDetails, ViewingPhoto {
 	}
 	
 	func start() {
-		let viewController = viewControllersFactory.makeProfileViewController(for: self)
+		let viewController = viewControllersFactory.makeSettingsViewController(for: self, settingsSections: [])
 		navigationController.pushViewController(viewController, animated: false)
 	}
 	
-	func viewAlbumDetails(_ album: Album) {
-		let albumDetailsVC = viewControllersFactory.makeAlbumDetailsViewController(for: self, album: album)
-		albumDetailsVC.hidesBottomBarWhenPushed = true
-		albumDetailsVC.title = album.title
-		
-		navigationController.pushViewController(albumDetailsVC, animated: true)
-	}
-	
-	func viewPhoto(_ photo: Photo) {
-		navigationController.pushViewController(PhotoDetailsViewController(selectedPhoto: photo), animated: true)
+	func disclose(_ settingsDisclosureOption: Any) {
+		// TODO: disclose option
 	}
 }
