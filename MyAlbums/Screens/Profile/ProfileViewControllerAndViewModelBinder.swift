@@ -60,8 +60,8 @@ class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<
 			.sink (receiveValue: { isPresentingToast in
 				if isPresentingToast {
 					// don't try to present it if it's already presented
-					guard self.viewController.toast.isPresented != true else {
-						self.viewController.toast.collapse()
+					guard self.viewController.toastView.isPresented != true else {
+						self.viewController.toastView.collapse()
 						return
 					}
 					
@@ -72,19 +72,19 @@ class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<
 				}
 				
 				// don't try to dismissed it if it's not presented
-				guard self.viewController.toast.isPresented == true else { return }
+				guard self.viewController.toastView.isPresented == true else { return }
 				self.viewController.dismissToast(animated: true)
 			})
 			.store(in: &subscriptions)
 		
 		// isToastExpanded
-		viewController.toast.$isExpanded.assign(to: \.isToastExpanded, on: viewModel).store(in: &subscriptions)
+		viewController.toastView.$isExpanded.assign(to: \.isToastExpanded, on: viewModel).store(in: &subscriptions)
 		
 		// toastTitle
-		viewModel.$toastTitle.assign(to: \.title, on: viewController.toast).store(in: &subscriptions)
+		viewModel.$toastTitle.assign(to: \.title, on: viewController.toastView).store(in: &subscriptions)
 		
 		// toastDetailsDescription
-		viewModel.$toastDetailsDescription.assign(to: \.detailsDescription, on: viewController.toast).store(in: &subscriptions)
+		viewModel.$toastDetailsDescription.assign(to: \.detailsDescription, on: viewController.toastView).store(in: &subscriptions)
 		
 	}
 	

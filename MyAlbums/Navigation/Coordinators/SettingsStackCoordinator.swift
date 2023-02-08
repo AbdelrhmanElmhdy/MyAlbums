@@ -22,11 +22,19 @@ class SettingsStackCoordinator: Coordinator, DisclosingSettings {
 	}
 	
 	func start() {
-		let viewController = viewControllersFactory.makeSettingsViewController(for: self, settingsSections: [])
+		let viewController = viewControllersFactory.makeSettingsViewController(for: self, settingsSections: nil)
+		viewController.title = .ui.settings
 		navigationController.pushViewController(viewController, animated: false)
 	}
 	
-	func disclose(_ settingsDisclosureOption: Any) {
-		// TODO: disclose option
+	func disclose(_ settingsDisclosureOption: SettingsDisclosureOption) {
+		guard !settingsDisclosureOption.children.isEmpty else { return }
+		
+		let settingsSections = settingsDisclosureOption.children
+		let viewController = viewControllersFactory.makeSettingsViewController(for: self, settingsSections: settingsSections)
+		viewController.title = settingsDisclosureOption.label
+		viewController.hidesBottomBarWhenPushed = true
+		
+		navigationController.pushViewController(viewController, animated: true)
 	}
 }

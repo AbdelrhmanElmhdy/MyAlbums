@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PresentsToast: UIViewController, ToastDelegate {
-	var toast: Toast { get set }
+	var toastView: ToastView { get set }
 	
 	func presentToast(withTitle title: String, andDescription description: String, animated: Bool)
 	func dismissToast(animated: Bool)
@@ -16,11 +16,11 @@ protocol PresentsToast: UIViewController, ToastDelegate {
 
 extension PresentsToast {
 	private func setupToast() {
-		toast.delegate = self
+		toastView.delegate = self
 		
 		let window = SceneDelegate.shared.window!
-		window.addSubview(toast)
-		toast.translatesAutoresizingMaskIntoConstraints = false
+		window.addSubview(toastView)
+		toastView.translatesAutoresizingMaskIntoConstraints = false
 		
 		let bottomPadding = 15.0
 		let bottomAnchorConstraintConstant: CGFloat
@@ -33,33 +33,33 @@ extension PresentsToast {
 		}
 		
 		NSLayoutConstraint.activate([
-			toast.leadingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.leadingAnchor),
-			toast.bottomAnchor.constraint(equalTo: window.bottomAnchor, constant: -bottomAnchorConstraintConstant),
-			toast.trailingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.trailingAnchor),
+			toastView.leadingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.leadingAnchor),
+			toastView.bottomAnchor.constraint(equalTo: window.bottomAnchor, constant: -bottomAnchorConstraintConstant),
+			toastView.trailingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.trailingAnchor),
 		])
 		
 	}
 	
 	private func removeToastFromSuperview() {
-		toast.removeFromSuperview()
+		toastView.removeFromSuperview()
 	}
 	
 	func presentToast(withTitle title: String, andDescription description: String = "", animated: Bool) {
-		if toast.superview == nil {
+		if toastView.superview == nil {
 			setupToast()
 		}
-		toast.present(withTitle: title, andDescription: description, animated: animated)
+		toastView.present(withTitle: title, andDescription: description, animated: animated)
 	}
 	
 	func dismissToast(animated: Bool) {
-		toast.dismiss(animated: animated, completion: { [weak self] _ in self?.removeToastFromSuperview() })
+		toastView.dismiss(animated: animated, completion: { [weak self] _ in self?.removeToastFromSuperview() })
 	}
 	
-	func didPresent(_ toast: Toast) {
+	func didPresent(_ toastView: ToastView) {
 		
 	}
 	
-	func didDismiss(_ toast: Toast) {
+	func didDismiss(_ toastView: ToastView) {
 		removeToastFromSuperview()
 	}
 }

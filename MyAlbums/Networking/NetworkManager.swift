@@ -10,7 +10,7 @@ import Combine
 import Moya
 import CombineMoya
 
-class NetworkManager {
+class NetworkManager: NetworkManagerProtocol {
 	private let APIProvider = MoyaProvider<API>()
 	
 	func executeRequest<T: Decodable>(_ target: API) -> AnyPublisher<T, NetworkRequestError> {

@@ -1,5 +1,5 @@
 //
-//  PhotoServices.swift
+//  PhotoService.swift
 //  MyAlbums
 //
 //  Created by Abdelrhman Elmahdy on 07/02/2023.
@@ -7,7 +7,7 @@
 
 import Combine
 
-class PhotoServices: PhotoServicesProtocol {
+class PhotoService: PhotoServiceProtocol {
 	private let networkManager = NetworkManager()
 	
 	func fetchPhotos(forAlbumId albumId: Int) -> AnyPublisher<[Photo], NetworkRequestError> {

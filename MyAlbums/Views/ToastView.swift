@@ -1,5 +1,5 @@
 //
-//  Toast.swift
+//  ToastView.swift
 //  MyAlbums
 //
 //  Created by Abdelrhman Elmahdy on 07/02/2023.

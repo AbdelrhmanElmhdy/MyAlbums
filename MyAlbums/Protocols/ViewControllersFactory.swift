@@ -13,9 +13,8 @@ protocol ProfileViewControllersFactory: AnyObject {
 }
 
 protocol SettingsViewControllersFactory: AnyObject {
-	// TODO: Define the settingsDisclosureOption type
 	func makeSettingsViewController(for coordinator: DisclosingSettings,
-																	settingsSections: [Any]?) -> SettingsViewController
+																	settingsSections: [SettingsSection]?) -> SettingsViewController
 }
 
 typealias ViewControllersFactory = ProfileViewControllersFactory & SettingsViewControllersFactory

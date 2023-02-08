@@ -47,7 +47,7 @@ class AlbumDetailsViewControllerAndViewModelBinder: ViewControllerAndViewModelBi
 		// searchText
 		
 		viewController.navigationItem.searchController?.searchBar.textDidChangePublisher
-			.debounce(for: 0.15, scheduler: RunLoop.main)
+			.debounce(for: 0.15, scheduler: RunLoop.main) // Debouncing for a short period, since the search operation is inexpensive.
 			.sink{ [weak self] searchText in
 				self?.viewModel.searchText = searchText
 				self?.viewController.dataSource.searchText = searchText

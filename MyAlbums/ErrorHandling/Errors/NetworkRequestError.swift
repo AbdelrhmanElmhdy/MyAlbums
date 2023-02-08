@@ -54,7 +54,6 @@ enum NetworkRequestError : UserFriendlyError {
 	
 	case httpResponseError(statusCode: Int)
 	
-	
 	var associatedValues: (description: String, userFriendlyDescription: String, userFriendlyAdvice: String, isFatal: Bool) {
 		switch self {
 		case let .somethingWentWrong(description, userFriendlyDescription, userFriendlyAdvice, isFatal),

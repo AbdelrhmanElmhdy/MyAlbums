@@ -9,12 +9,24 @@
 // MARK: UI
 
 "Profile" = "الصفحة الشخصية";
-"Settings" = "الإعدادات";
 "My Albums" = "ألبوماتي";
+"Search in images" = "البحث في الصور";
 
+"Settings" = "الإعدادات";
+"Dark Mode" = "الوضع الليلي";
+"Language" = "اللغة";
+
+"Off" = "مغلق";
+"On" = "مفعل";
+"System" = "نظام";
 
 // MARK: Errors
 
 "No Internet Connection" = "لا يوجد اتصال بالإنترنت";
 "Something went wrong!" = "حدث خطأ ما";
 "Try again later" = "حاول مجددًا";
+"Check internet connection and try again later" = "تأكد من اتصالك بالإنترنت و حاول مجددًا";
+
+"Login required" = "يجب تسجيل الدخول أولًا";
+"login" = "قم بتسجيل الدخول";
+"You don't have permission" = "ليس لديك الصلاحية";

@@ -20,7 +20,7 @@ class ProfileViewController: UITableViewController, PresentsToast {
 	
 	private lazy var dataBinder = ProfileViewControllerAndViewModelBinder(viewController: self, viewModel: viewModel)
 	
-	var toast: Toast = Toast()
+	var toastView: ToastView = ToastView()
 	let header = ProfileHeader(frame: CGRect(x: 0, y: 0, width: 0, height: 125))
 	
 	// MARK: Initialization

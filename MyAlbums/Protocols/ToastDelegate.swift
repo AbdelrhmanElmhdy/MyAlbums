@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ToastDelegate {
-	func didPresent(_ toast: Toast)
-	func didDismiss(_ toast: Toast)
+	func didPresent(_ toastView: ToastView)
+	func didDismiss(_ toastView: ToastView)
 }

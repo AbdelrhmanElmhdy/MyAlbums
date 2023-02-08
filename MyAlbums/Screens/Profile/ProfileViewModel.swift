@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class ProfileViewModel {
-	let userServices = UserServices()
-	let albumServices = AlbumServices()
+	let userService: UserService
+	let albumService: AlbumService
 	
 	var dataRefreshSubscription: AnyCancellable?
 	
@@ -25,6 +25,13 @@ class ProfileViewModel {
 	@Published var toastTitle = ""
 	@Published var toastDetailsDescription = ""
 	
+	// MARK: Initialization
+	
+	init(userService: UserService, albumService: AlbumService) {
+		self.userService = userService
+		self.albumService = albumService
+	}
+	
 	// MARK: Logic
 	
 	func refreshData() {
@@ -32,8 +39,8 @@ class ProfileViewModel {
 		
 		let currentUserId = Int.random(in: 1...10)
 		
-		let userDataSubscription = userServices.fetchUser(ofId: currentUserId)
-		let userAlbumsSubscription = albumServices.fetchAlbums(forUserId: currentUserId)
+		let userDataSubscription = userService.fetchUser(ofId: currentUserId)
+		let userAlbumsSubscription = albumService.fetchAlbums(forUserId: currentUserId)
 		
 		dataRefreshSubscription = Publishers.CombineLatest(userDataSubscription, userAlbumsSubscription)
 			.sink(receiveCompletion: didReceiveDataRefreshCompletion) { [weak self] user, albums in
@@ -61,6 +68,8 @@ class ProfileViewModel {
 		DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
 			if !self.isToastExpanded { self.isPresentingToast = false }
 		}
+		
+		if error.isFatal { ErrorManager.reportError(error) }
 	}
 	
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UserDefaultsManagerProtocol {
-	
+	var userPreferences: UserPreferences { get set }
 }

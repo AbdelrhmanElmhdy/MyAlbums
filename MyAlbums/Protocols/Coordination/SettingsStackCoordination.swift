@@ -8,6 +8,5 @@
 import Foundation
 
 protocol DisclosingSettings: AnyObject {
-	// TODO: Define the settingsDisclosureOption type
-	func disclose(_ settingsDisclosureOption: Any)
+	func disclose(_ settingsDisclosureOption: SettingsDisclosureOption)
 }

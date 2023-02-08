@@ -8,6 +8,7 @@
 import UIKit
 
 class SettingsStackCoordinatorMock: Coordinator, DisclosingSettings {
+	
 	var children = Array<Coordinator>()
 	let navigationController = UINavigationController()
 	
@@ -15,7 +16,7 @@ class SettingsStackCoordinatorMock: Coordinator, DisclosingSettings {
 		
 	}
 	
-	func disclose(_ settingsDisclosureOption: Any) {
+	func disclose(_ settingsDisclosureOption: SettingsDisclosureOption) {
 		
 	}
 	

@@ -8,7 +8,7 @@
 import Combine
 
 class AlbumDetailsViewModel {
-	let photoServices = PhotoServices()
+	let photoService: PhotoService
 	
 	var photosSubscription: AnyCancellable?
 	
@@ -22,9 +22,10 @@ class AlbumDetailsViewModel {
 	
 	// MARK: Initialization
 	
-	init(album: Album) {
+	init(album: Album, photoService: PhotoService) {
 		self.albumId = album.id
 		self.title = album.title
+		self.photoService = photoService
 	}
 	
 	// MARK: Logic
@@ -32,7 +33,7 @@ class AlbumDetailsViewModel {
 	func fetchPhotos() {
 		isLoading = true
 		
-		photosSubscription = photoServices.fetchPhotos(forAlbumId: albumId)
+		photosSubscription = photoService.fetchPhotos(forAlbumId: albumId)
 			.sink(receiveCompletion: { _ in }, receiveValue: { [weak self] photos in
 				self?.photos = photos
 				self?.isLoading = false
