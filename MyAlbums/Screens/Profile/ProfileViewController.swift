@@ -67,8 +67,8 @@ class ProfileViewController: UITableViewController, PresentsToast {
 	}
 	
 	func setupRefreshControl() {
-		refreshControl = UIRefreshControl()
-		refreshControl?.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+		tableView.refreshControl = UIRefreshControl()
+		tableView.refreshControl?.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
 	}
 	
 	func setupTableView() {

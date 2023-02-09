@@ -40,15 +40,15 @@ class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<
 			.removeDuplicates()
 			.sink (receiveValue: {
 				if $0 {
-					guard self.viewController.refreshControl?.isRefreshing != true else { return }
-					self.viewController.refreshControl?.beginRefreshing()
+					guard self.viewController.tableView.refreshControl?.isRefreshing != true else { return }
+					self.viewController.tableView.refreshControl?.beginRefreshing()
 				} else {
-					self.viewController.refreshControl?.endRefreshing()
+					self.viewController.tableView.refreshControl?.endRefreshing()
 				}
 			})
 			.store(in: &subscriptions)
 		
-		viewController.refreshControl?.isRefreshingPublisher
+		viewController.tableView.refreshControl?.isRefreshingPublisher
 			.receive(on: DispatchQueue.main)
 			.removeDuplicates()
 			.assign(to: \.isLoading, on: viewModel)

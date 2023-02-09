@@ -60,7 +60,7 @@ class ProfileViewModel {
 		}
 	}
 	
-	func handleDataRefreshError(_ error: NetworkRequestError) {
+	private func handleDataRefreshError(_ error: NetworkRequestError) {
 		toastTitle = error.userFriendlyDescription
 		toastDetailsDescription = error.userFriendlyAdvice
 		isPresentingToast = true

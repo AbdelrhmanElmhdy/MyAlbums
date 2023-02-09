@@ -11,21 +11,46 @@ import Combine
 
 final class AlbumDetailsViewControllerIntegrationTests: XCTestCase {
 	
-	func testDataRefresh() {
-		// Given
+	var viewModel: AlbumDetailsViewModel!
+	var sut: AlbumDetailsViewController!
+	
+	override func setUp() {
 		let networkManager = NetworkManagerFactory.make(context: .test)
 		let photoService = PhotoService(networkManager: networkManager)
+		viewModel = AlbumDetailsViewModel(album: .init(id: 0, title: ""), photoService: photoService)
+		sut = AlbumDetailsViewController(coordinator: ProfileStackCoordinatorMock(), viewModel: viewModel)
+	}
+	
+	func testDataRefresh() {
+		// Given
 		let expectedPhotos = JSONFileLoader.loadJson(as: [Photo].self, fromFile: .files.sampleAlbumPhotosResponse)!
-		let viewModel = AlbumDetailsViewModel(album: .init(id: 0, title: ""), photoService: photoService)
-		let sut = AlbumDetailsViewController(coordinator: ProfileStackCoordinatorMock(), viewModel: viewModel)
 		
 		// When
 		sut.didRefresh()
 		
 		// Then
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-			XCTAssertEqual(sut.collectionView.refreshControl?.isRefreshing, false)
-			XCTAssertEqual(sut.dataSource.photos, expectedPhotos)
+			XCTAssertEqual(self.sut.collectionView.refreshControl?.isRefreshing, false)
+			XCTAssertEqual(self.sut.dataSource.photos, expectedPhotos)
+		}
+	}
+	
+	func testImageSearch() {
+		// Given
+		let searchText = "Gi"
+		let expectedPhotos = JSONFileLoader.loadJson(as: [Photo].self, fromFile: .files.sampleAlbumPhotosResponse)!.filter {
+			$0.title.lowercased().contains(searchText.lowercased())
+		}
+		
+		// When
+		sut.didRefresh()
+		viewModel.searchText = searchText
+		
+		// Then
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+			XCTAssertEqual(self.sut.dataSource.isFiltering, true)
+			XCTAssertEqual(self.sut.dataSource.filteredPhotos, expectedPhotos)
+			XCTAssertEqual(self.sut.collectionView.numberOfItems(inSection: 0), expectedPhotos.count)
 		}
 	}
 	
