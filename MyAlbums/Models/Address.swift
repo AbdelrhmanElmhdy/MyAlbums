@@ -23,3 +23,13 @@ extension Address: Codable {
 extension Address: CustomStringConvertible {
 	var description: String { "\(street), \(suite), \(city), \(zipCode)" }
 }
+
+extension Address: Equatable {
+	static func == (lhs: Address, rhs: Address) -> Bool {
+		return
+			lhs.street == rhs.street &&
+			lhs.suite == rhs.suite &&
+			lhs.city == rhs.city &&
+			lhs.zipCode == rhs.zipCode
+	}
+}

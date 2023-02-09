@@ -8,5 +8,5 @@
 import Foundation
 
 struct EnvironmentVariableNamesContainer {
-	static let context = "CONTEXT"	
+	static let context = "CONTEXT"
 }

@@ -11,7 +11,11 @@ import Moya
 import CombineMoya
 
 class NetworkManager: NetworkManagerProtocol {
-	private let APIProvider = MoyaProvider<API>()
+	private let APIProvider: MoyaProvider<API>
+	
+	init(APIProvider: MoyaProvider<API>) {
+		self.APIProvider = APIProvider
+	}
 	
 	func executeRequest<T: Decodable>(_ target: API) -> AnyPublisher<T, NetworkRequestError> {
 		return APIProvider.requestPublisher(target)

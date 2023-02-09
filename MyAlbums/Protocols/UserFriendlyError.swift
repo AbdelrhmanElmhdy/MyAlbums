@@ -8,7 +8,7 @@
 import Foundation
 
 /// An error that can be used to present a user friendly error message to the user and some advice, while retaining the developer friendly description.
-protocol UserFriendlyError: Error {
+protocol UserFriendlyError: Error, CustomNSError {
 	
 	var description: String { get }
 	var userFriendlyDescription: String { get }
@@ -47,4 +47,14 @@ extension UserFriendlyError {
 		return .errors.tryAgainLater
 	}
 	
+}
+
+// MARK: - Error User Info
+
+extension UserFriendlyError {
+	public var errorUserInfo: [String: Any] {
+		var userInfo: [String: Any] = [:]
+		userInfo[NSLocalizedDescriptionKey] = description
+		return userInfo
+	}
 }

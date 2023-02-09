@@ -19,5 +19,6 @@ extension String {
 	static let ui = UITextsContainer.self
 	static let errors = ErrorTextsContainer.self
 	static let colors = ColorNamesContainer.self
+	static let files = FileNamesContainer.self
 	static let env = EnvironmentVariableNamesContainer.self
 }

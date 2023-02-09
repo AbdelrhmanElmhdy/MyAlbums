@@ -8,6 +8,6 @@
 import Combine
 
 /// Handles all services related to the `User` type
-protocol UserServiceProtocol {
+protocol UserServiceProtocol: AutoMockable {
 	func fetchUser(ofId id: Int) -> AnyPublisher<User, NetworkRequestError>
 }

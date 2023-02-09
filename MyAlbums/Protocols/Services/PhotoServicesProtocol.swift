@@ -8,6 +8,6 @@
 import Combine
 
 /// Handles all services related to the `Photo` type
-protocol PhotoServiceProtocol {
+protocol PhotoServiceProtocol: AutoMockable {
 	func fetchPhotos(forAlbumId: Int) -> AnyPublisher<[Photo], NetworkRequestError>
 }

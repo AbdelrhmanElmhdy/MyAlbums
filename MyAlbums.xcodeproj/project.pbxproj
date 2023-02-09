@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC2F302B2994B52200137833 /* NetworkManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2F302A2994B52200137833 /* NetworkManagerFactory.swift */; };
+		BC2F302E2994BAA100137833 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = BC2F302D2994BAA100137833 /* CombineMoya */; };
+		BC2F30302994BAA100137833 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = BC2F302F2994BAA100137833 /* Moya */; };
+		BC2F30322994BAA100137833 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = BC2F30312994BAA100137833 /* ReactiveMoya */; };
+		BC2F30342994BAA100137833 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = BC2F30332994BAA100137833 /* RxMoya */; };
+		BC2F30362994BAA100137833 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BC2F30352994BAA100137833 /* CombineCocoa */; };
+		BC2F30382994BAA100137833 /* ShimmerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC2F30372994BAA100137833 /* ShimmerSwift */; };
+		BC2F303A2994C0E800137833 /* SampleUserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F30392994C0E800137833 /* SampleUserResponse.json */; };
+		BC2F303B2994C0E800137833 /* SampleUserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F30392994C0E800137833 /* SampleUserResponse.json */; };
+		BC2F303C2994C0E800137833 /* SampleUserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F30392994C0E800137833 /* SampleUserResponse.json */; };
+		BC2F303F2994C19F00137833 /* SampleAlbumPhotosResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F303D2994C19E00137833 /* SampleAlbumPhotosResponse.json */; };
+		BC2F30402994C1A000137833 /* SampleAlbumPhotosResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F303D2994C19E00137833 /* SampleAlbumPhotosResponse.json */; };
+		BC2F30412994C1A000137833 /* SampleAlbumPhotosResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F303D2994C19E00137833 /* SampleAlbumPhotosResponse.json */; };
+		BC2F30422994C1A000137833 /* SampleUserAlbumsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F303E2994C19F00137833 /* SampleUserAlbumsResponse.json */; };
+		BC2F30432994C1A000137833 /* SampleUserAlbumsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F303E2994C19F00137833 /* SampleUserAlbumsResponse.json */; };
+		BC2F30442994C1A000137833 /* SampleUserAlbumsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC2F303E2994C19F00137833 /* SampleUserAlbumsResponse.json */; };
 		BC3D267229905B5E00948490 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D267129905B5E00948490 /* ProfileViewModel.swift */; };
 		BC3D267429905D4700948490 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D267329905D4700948490 /* AlbumDetailsViewController.swift */; };
 		BC3D267629905D6F00948490 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D267529905D6F00948490 /* PhotoDetailsViewController.swift */; };
@@ -30,12 +46,13 @@
 		BC523D2529938C3200EA9EAF /* EnvironmentVariableNamesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC523D2429938C3200EA9EAF /* EnvironmentVariableNamesContainer.swift */; };
 		BC523D2729938D5700EA9EAF /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC523D2629938D5700EA9EAF /* UINavigationController+Ext.swift */; };
 		BC523D2929938F9300EA9EAF /* UserDefaultsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC523D2829938F9300EA9EAF /* UserDefaultsManagerMock.swift */; };
+		BC523D2C2993ACB200EA9EAF /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC523D2B2993ACB200EA9EAF /* NetworkManagerMock.swift */; };
 		BC6625B6298FF9FD00ED94D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625B5298FF9FD00ED94D5 /* AppDelegate.swift */; };
 		BC6625B8298FF9FD00ED94D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625B7298FF9FD00ED94D5 /* SceneDelegate.swift */; };
 		BC6625BA298FF9FD00ED94D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625B9298FF9FD00ED94D5 /* ProfileViewController.swift */; };
 		BC6625BF298FFA0000ED94D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6625BE298FFA0000ED94D5 /* Assets.xcassets */; };
 		BC6625C2298FFA0000ED94D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6625C0298FFA0000ED94D5 /* LaunchScreen.storyboard */; };
-		BC6625CD298FFA0100ED94D5 /* MyAlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625CC298FFA0100ED94D5 /* MyAlbumsTests.swift */; };
+		BC6625CD298FFA0100ED94D5 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625CC298FFA0100ED94D5 /* NetworkManagerTests.swift */; };
 		BC6625D7298FFA0200ED94D5 /* MyAlbumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625D6298FFA0200ED94D5 /* MyAlbumsUITests.swift */; };
 		BC6625D9298FFA0200ED94D5 /* MyAlbumsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625D8298FFA0200ED94D5 /* MyAlbumsUITestsLaunchTests.swift */; };
 		BC6625EB2990131F00ED94D5 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625EA2990131F00ED94D5 /* String+Ext.swift */; };
@@ -65,6 +82,27 @@
 		BCA8B745299261670062C3E5 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B744299261670062C3E5 /* UIColor+Ext.swift */; };
 		BCA8B747299261870062C3E5 /* ColorNamesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B746299261870062C3E5 /* ColorNamesContainer.swift */; };
 		BCA8B74929930D400062C3E5 /* ToastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B74829930D3F0062C3E5 /* ToastDelegate.swift */; };
+		BCAE07792994C33300C199D3 /* ColorNamesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B746299261870062C3E5 /* ColorNamesContainer.swift */; };
+		BCAE077A2994C33300C199D3 /* UITextsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625ED2990139F00ED94D5 /* UITextsContainer.swift */; };
+		BCAE077B2994C33300C199D3 /* EnvironmentVariableNamesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC523D2429938C3200EA9EAF /* EnvironmentVariableNamesContainer.swift */; };
+		BCAE077C2994C33300C199D3 /* ErrorTextsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37DC82991EF1200D6C671 /* ErrorTextsContainer.swift */; };
+		BCAE07812994C4D000C199D3 /* JSONFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE07802994C4D000C199D3 /* JSONFileLoader.swift */; };
+		BCAE07832994C6E700C199D3 /* FileNamesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE07822994C6E700C199D3 /* FileNamesContainer.swift */; };
+		BCAE07842994C7BD00C199D3 /* FileNamesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE07822994C6E700C199D3 /* FileNamesContainer.swift */; };
+		BCAE07852994C7C500C199D3 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6625EA2990131F00ED94D5 /* String+Ext.swift */; };
+		BCAE07872994D50600C199D3 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE07862994D50600C199D3 /* UserServiceTests.swift */; };
+		BCAFECCA2994DFEB0022F573 /* AlbumServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECC92994DFEB0022F573 /* AlbumServiceTests.swift */; };
+		BCAFECCC2994E0D90022F573 /* PhotoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECCB2994E0D90022F573 /* PhotoServiceTests.swift */; };
+		BCAFECCE2994E1FB0022F573 /* UserPreferencesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECCD2994E1FB0022F573 /* UserPreferencesServiceTests.swift */; };
+		BCAFECD32994E5020022F573 /* PhotoServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECCF2994E5020022F573 /* PhotoServiceMock.swift */; };
+		BCAFECD42994E5020022F573 /* UserPreferencesServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECD02994E5020022F573 /* UserPreferencesServiceMock.swift */; };
+		BCAFECD52994E5020022F573 /* UserServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECD12994E5020022F573 /* UserServiceMock.swift */; };
+		BCAFECD62994E5020022F573 /* AlbumServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECD22994E5020022F573 /* AlbumServiceMock.swift */; };
+		BCAFECDA2994E68B0022F573 /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECD92994E68B0022F573 /* ProfileViewModelTests.swift */; };
+		BCAFECDC2994EE1D0022F573 /* AlbumDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECDB2994EE1D0022F573 /* AlbumDetailsViewModelTests.swift */; };
+		BCAFECDE2994EF1F0022F573 /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECDD2994EF1F0022F573 /* SettingsViewModelTests.swift */; };
+		BCAFECE12994F1FF0022F573 /* ProfileViewControllerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECE02994F1FF0022F573 /* ProfileViewControllerIntegrationTests.swift */; };
+		BCAFECE32994F3F00022F573 /* AlbumDetailsViewControllerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFECE22994F3F00022F573 /* AlbumDetailsViewControllerIntegrationTests.swift */; };
 		BCB37D632990CE8E00D6C671 /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D622990CE8E00D6C671 /* AlbumDetailsViewModel.swift */; };
 		BCB37D652990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D642990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift */; };
 		BCB37D692990D0AE00D6C671 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37D682990D0AE00D6C671 /* AlbumCollectionViewCell.swift */; };
@@ -114,6 +152,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC2F302A2994B52200137833 /* NetworkManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerFactory.swift; sourceTree = "<group>"; };
+		BC2F30392994C0E800137833 /* SampleUserResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleUserResponse.json; sourceTree = "<group>"; };
+		BC2F303D2994C19E00137833 /* SampleAlbumPhotosResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleAlbumPhotosResponse.json; sourceTree = "<group>"; };
+		BC2F303E2994C19F00137833 /* SampleUserAlbumsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleUserAlbumsResponse.json; sourceTree = "<group>"; };
 		BC3D267129905B5E00948490 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		BC3D267329905D4700948490 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
 		BC3D267529905D6F00948490 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +179,7 @@
 		BC523D2429938C3200EA9EAF /* EnvironmentVariableNamesContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentVariableNamesContainer.swift; sourceTree = "<group>"; };
 		BC523D2629938D5700EA9EAF /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		BC523D2829938F9300EA9EAF /* UserDefaultsManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerMock.swift; sourceTree = "<group>"; };
+		BC523D2B2993ACB200EA9EAF /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		BC6625B2298FF9FD00ED94D5 /* MyAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6625B5298FF9FD00ED94D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6625B7298FF9FD00ED94D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +188,7 @@
 		BC6625C1298FFA0000ED94D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC6625C3298FFA0000ED94D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC6625C8298FFA0100ED94D5 /* MyAlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC6625CC298FFA0100ED94D5 /* MyAlbumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumsTests.swift; sourceTree = "<group>"; };
+		BC6625CC298FFA0100ED94D5 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		BC6625D2298FFA0200ED94D5 /* MyAlbumsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAlbumsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6625D6298FFA0200ED94D5 /* MyAlbumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumsUITests.swift; sourceTree = "<group>"; };
 		BC6625D8298FFA0200ED94D5 /* MyAlbumsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -178,6 +221,21 @@
 		BCA8B744299261670062C3E5 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		BCA8B746299261870062C3E5 /* ColorNamesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNamesContainer.swift; sourceTree = "<group>"; };
 		BCA8B74829930D3F0062C3E5 /* ToastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastDelegate.swift; sourceTree = "<group>"; };
+		BCAE07802994C4D000C199D3 /* JSONFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileLoader.swift; sourceTree = "<group>"; };
+		BCAE07822994C6E700C199D3 /* FileNamesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNamesContainer.swift; sourceTree = "<group>"; };
+		BCAE07862994D50600C199D3 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
+		BCAFECC92994DFEB0022F573 /* AlbumServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumServiceTests.swift; sourceTree = "<group>"; };
+		BCAFECCB2994E0D90022F573 /* PhotoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceTests.swift; sourceTree = "<group>"; };
+		BCAFECCD2994E1FB0022F573 /* UserPreferencesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesServiceTests.swift; sourceTree = "<group>"; };
+		BCAFECCF2994E5020022F573 /* PhotoServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoServiceMock.swift; sourceTree = "<group>"; };
+		BCAFECD02994E5020022F573 /* UserPreferencesServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferencesServiceMock.swift; sourceTree = "<group>"; };
+		BCAFECD12994E5020022F573 /* UserServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceMock.swift; sourceTree = "<group>"; };
+		BCAFECD22994E5020022F573 /* AlbumServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumServiceMock.swift; sourceTree = "<group>"; };
+		BCAFECD92994E68B0022F573 /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
+		BCAFECDB2994EE1D0022F573 /* AlbumDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		BCAFECDD2994EF1F0022F573 /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
+		BCAFECE02994F1FF0022F573 /* ProfileViewControllerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerIntegrationTests.swift; sourceTree = "<group>"; };
+		BCAFECE22994F3F00022F573 /* AlbumDetailsViewControllerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewControllerIntegrationTests.swift; sourceTree = "<group>"; };
 		BCB37D622990CE8E00D6C671 /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
 		BCB37D642990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		BCB37D682990D0AE00D6C671 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -221,6 +279,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2F30302994BAA100137833 /* Moya in Frameworks */,
+				BC2F302E2994BAA100137833 /* CombineMoya in Frameworks */,
+				BC2F30342994BAA100137833 /* RxMoya in Frameworks */,
+				BC2F30362994BAA100137833 /* CombineCocoa in Frameworks */,
+				BC2F30382994BAA100137833 /* ShimmerSwift in Frameworks */,
+				BC2F30322994BAA100137833 /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +298,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC2F30292994B07B00137833 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCAFECD72994E65D0022F573 /* ServicesTests */,
+				BCAFECD82994E66C0022F573 /* ViewModelTests */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		BC2F302C2994BAA100137833 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC3D267729905E0600948490 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +357,18 @@
 			path = Coordination;
 			sourceTree = "<group>";
 		};
+		BC523D2A2993ACA200EA9EAF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BC523D2B2993ACB200EA9EAF /* NetworkManagerMock.swift */,
+				BCAFECD22994E5020022F573 /* AlbumServiceMock.swift */,
+				BCAFECCF2994E5020022F573 /* PhotoServiceMock.swift */,
+				BCAFECD02994E5020022F573 /* UserPreferencesServiceMock.swift */,
+				BCAFECD12994E5020022F573 /* UserServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		BC6625A9298FF9FD00ED94D5 = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +376,7 @@
 				BC6625CB298FFA0100ED94D5 /* MyAlbumsTests */,
 				BC6625D5298FFA0200ED94D5 /* MyAlbumsUITests */,
 				BC6625B3298FF9FD00ED94D5 /* Products */,
+				BC2F302C2994BAA100137833 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -322,7 +415,9 @@
 		BC6625CB298FFA0100ED94D5 /* MyAlbumsTests */ = {
 			isa = PBXGroup;
 			children = (
-				BC6625CC298FFA0100ED94D5 /* MyAlbumsTests.swift */,
+				BC523D2A2993ACA200EA9EAF /* Mocks */,
+				BC2F30292994B07B00137833 /* UnitTests */,
+				BCAFECDF2994F1C60022F573 /* IntegrationTests */,
 			);
 			path = MyAlbumsTests;
 			sourceTree = "<group>";
@@ -403,7 +498,11 @@
 				BC6625ED2990139F00ED94D5 /* UITextsContainer.swift */,
 				BCB37DC82991EF1200D6C671 /* ErrorTextsContainer.swift */,
 				BCA8B746299261870062C3E5 /* ColorNamesContainer.swift */,
+				BCAE07822994C6E700C199D3 /* FileNamesContainer.swift */,
 				BC523D2429938C3200EA9EAF /* EnvironmentVariableNamesContainer.swift */,
+				BC2F30392994C0E800137833 /* SampleUserResponse.json */,
+				BC2F303D2994C19E00137833 /* SampleAlbumPhotosResponse.json */,
+				BC2F303E2994C19F00137833 /* SampleUserAlbumsResponse.json */,
 				BC6625FF299025A800ED94D5 /* Localizable.strings */,
 			);
 			path = Constants;
@@ -468,6 +567,7 @@
 			children = (
 				BCB37DB92991C56900D6C671 /* ViewControllerAndViewModelBinder.swift */,
 				BC66260B29902C3700ED94D5 /* StorageWrapper.swift */,
+				BCAE07802994C4D000C199D3 /* JSONFileLoader.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -498,6 +598,7 @@
 				BC523D2029938BD300EA9EAF /* UserDefaultsManagerFactory.swift */,
 				BC66261F29903CE900ED94D5 /* MainViewControllersFactory.swift */,
 				BC523D142993883400EA9EAF /* SettingsSectionsFactory.swift */,
+				BC2F302A2994B52200137833 /* NetworkManagerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -528,6 +629,37 @@
 				BC6626282990435700ED94D5 /* SettingsStackCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BCAFECD72994E65D0022F573 /* ServicesTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC6625CC298FFA0100ED94D5 /* NetworkManagerTests.swift */,
+				BCAE07862994D50600C199D3 /* UserServiceTests.swift */,
+				BCAFECC92994DFEB0022F573 /* AlbumServiceTests.swift */,
+				BCAFECCB2994E0D90022F573 /* PhotoServiceTests.swift */,
+				BCAFECCD2994E1FB0022F573 /* UserPreferencesServiceTests.swift */,
+			);
+			path = ServicesTests;
+			sourceTree = "<group>";
+		};
+		BCAFECD82994E66C0022F573 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCAFECD92994E68B0022F573 /* ProfileViewModelTests.swift */,
+				BCAFECDB2994EE1D0022F573 /* AlbumDetailsViewModelTests.swift */,
+				BCAFECDD2994EF1F0022F573 /* SettingsViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		BCAFECDF2994F1C60022F573 /* IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCAFECE02994F1FF0022F573 /* ProfileViewControllerIntegrationTests.swift */,
+				BCAFECE22994F3F00022F573 /* AlbumDetailsViewControllerIntegrationTests.swift */,
+			);
+			path = IntegrationTests;
 			sourceTree = "<group>";
 		};
 		BCB37DC32991EE5A00D6C671 /* ErrorHandling */ = {
@@ -591,6 +723,14 @@
 				BC6625CA298FFA0100ED94D5 /* PBXTargetDependency */,
 			);
 			name = MyAlbumsTests;
+			packageProductDependencies = (
+				BC2F302D2994BAA100137833 /* CombineMoya */,
+				BC2F302F2994BAA100137833 /* Moya */,
+				BC2F30312994BAA100137833 /* ReactiveMoya */,
+				BC2F30332994BAA100137833 /* RxMoya */,
+				BC2F30352994BAA100137833 /* CombineCocoa */,
+				BC2F30372994BAA100137833 /* ShimmerSwift */,
+			);
 			productName = MyAlbumsTests;
 			productReference = BC6625C8298FFA0100ED94D5 /* MyAlbumsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -669,7 +809,10 @@
 			files = (
 				BC6625C2298FFA0000ED94D5 /* LaunchScreen.storyboard in Resources */,
 				BC6625FD299025A800ED94D5 /* Localizable.strings in Resources */,
+				BC2F303F2994C19F00137833 /* SampleAlbumPhotosResponse.json in Resources */,
+				BC2F30422994C1A000137833 /* SampleUserAlbumsResponse.json in Resources */,
 				BC6625BF298FFA0000ED94D5 /* Assets.xcassets in Resources */,
+				BC2F303A2994C0E800137833 /* SampleUserResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +820,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2F30432994C1A000137833 /* SampleUserAlbumsResponse.json in Resources */,
+				BC2F303B2994C0E800137833 /* SampleUserResponse.json in Resources */,
+				BC2F30402994C1A000137833 /* SampleAlbumPhotosResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +830,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2F30442994C1A000137833 /* SampleUserAlbumsResponse.json in Resources */,
+				BC2F303C2994C0E800137833 /* SampleUserResponse.json in Resources */,
+				BC2F30412994C1A000137833 /* SampleAlbumPhotosResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +870,7 @@
 				BCA8B741299258940062C3E5 /* ToastView.swift in Sources */,
 				BC66262629903EA600ED94D5 /* ProfileCoordinatorMock.swift in Sources */,
 				BC3D267229905B5E00948490 /* ProfileViewModel.swift in Sources */,
+				BC2F302B2994B52200137833 /* NetworkManagerFactory.swift in Sources */,
 				BCB37D632990CE8E00D6C671 /* AlbumDetailsViewModel.swift in Sources */,
 				BCA8B747299261870062C3E5 /* ColorNamesContainer.swift in Sources */,
 				BC523D172993894000EA9EAF /* UserPreferencesService.swift in Sources */,
@@ -751,6 +901,7 @@
 				BC523D2929938F9300EA9EAF /* UserDefaultsManagerMock.swift in Sources */,
 				BCA8B745299261670062C3E5 /* UIColor+Ext.swift in Sources */,
 				BC6625F92990211800ED94D5 /* UserDefaultsManager.swift in Sources */,
+				BCAE07832994C6E700C199D3 /* FileNamesContainer.swift in Sources */,
 				BCB37DCB2991F6C200D6C671 /* GenericError.swift in Sources */,
 				BCB37DA929919E6F00D6C671 /* ProfileTableViewSectionHeader.swift in Sources */,
 				BCB37D652990D01300D6C671 /* AlbumDetailsCollectionViewDataSource.swift in Sources */,
@@ -762,6 +913,7 @@
 				BC6625F62990206800ED94D5 /* DependencyContainer.swift in Sources */,
 				BC523D0C299386CD00EA9EAF /* SettingsViewController+Actions.swift in Sources */,
 				BC523D2729938D5700EA9EAF /* UINavigationController+Ext.swift in Sources */,
+				BCAE07812994C4D000C199D3 /* JSONFileLoader.swift in Sources */,
 				BCB37DAB2991AA4400D6C671 /* API.swift in Sources */,
 				BC6625B8298FF9FD00ED94D5 /* SceneDelegate.swift in Sources */,
 				BC66262029903CE900ED94D5 /* MainViewControllersFactory.swift in Sources */,
@@ -778,7 +930,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC6625CD298FFA0100ED94D5 /* MyAlbumsTests.swift in Sources */,
+				BC523D2C2993ACB200EA9EAF /* NetworkManagerMock.swift in Sources */,
+				BC6625CD298FFA0100ED94D5 /* NetworkManagerTests.swift in Sources */,
+				BCAFECCE2994E1FB0022F573 /* UserPreferencesServiceTests.swift in Sources */,
+				BCAFECD62994E5020022F573 /* AlbumServiceMock.swift in Sources */,
+				BCAFECD32994E5020022F573 /* PhotoServiceMock.swift in Sources */,
+				BCAFECE12994F1FF0022F573 /* ProfileViewControllerIntegrationTests.swift in Sources */,
+				BCAE07872994D50600C199D3 /* UserServiceTests.swift in Sources */,
+				BCAFECDC2994EE1D0022F573 /* AlbumDetailsViewModelTests.swift in Sources */,
+				BCAFECE32994F3F00022F573 /* AlbumDetailsViewControllerIntegrationTests.swift in Sources */,
+				BCAFECDA2994E68B0022F573 /* ProfileViewModelTests.swift in Sources */,
+				BCAFECCA2994DFEB0022F573 /* AlbumServiceTests.swift in Sources */,
+				BCAFECD42994E5020022F573 /* UserPreferencesServiceMock.swift in Sources */,
+				BCAFECDE2994EF1F0022F573 /* SettingsViewModelTests.swift in Sources */,
+				BCAFECD52994E5020022F573 /* UserServiceMock.swift in Sources */,
+				BCAFECCC2994E0D90022F573 /* PhotoServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +954,12 @@
 			files = (
 				BC6625D9298FFA0200ED94D5 /* MyAlbumsUITestsLaunchTests.swift in Sources */,
 				BC6625D7298FFA0200ED94D5 /* MyAlbumsUITests.swift in Sources */,
+				BCAE077A2994C33300C199D3 /* UITextsContainer.swift in Sources */,
+				BCAE07792994C33300C199D3 /* ColorNamesContainer.swift in Sources */,
+				BCAE07842994C7BD00C199D3 /* FileNamesContainer.swift in Sources */,
+				BCAE077B2994C33300C199D3 /* EnvironmentVariableNamesContainer.swift in Sources */,
+				BCAE07852994C7C500C199D3 /* String+Ext.swift in Sources */,
+				BCAE077C2994C33300C199D3 /* ErrorTextsContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1147,6 +1319,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BC2F302D2994BAA100137833 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCB37DAD2991B07200D6C671 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		BC2F302F2994BAA100137833 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCB37DAD2991B07200D6C671 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		BC2F30312994BAA100137833 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCB37DAD2991B07200D6C671 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		BC2F30332994BAA100137833 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCB37DAD2991B07200D6C671 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		BC2F30352994BAA100137833 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCB37DB42991C4AF00D6C671 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		BC2F30372994BAA100137833 /* ShimmerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCB37DD62992210800D6C671 /* XCRemoteSwiftPackageReference "ShimmerSwift" */;
+			productName = ShimmerSwift;
+		};
 		BCB37DAE2991B07200D6C671 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BCB37DAD2991B07200D6C671 /* XCRemoteSwiftPackageReference "Moya" */;

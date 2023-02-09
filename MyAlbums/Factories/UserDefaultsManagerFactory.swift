@@ -8,7 +8,10 @@
 import Foundation
 
 class UserDefaultsManagerFactory {
-	static func make() -> UserDefaultsManagerProtocol {
-		return ENV.context == .test ? UserDefaultsManagerMock() : UserDefaultsManager()
+	
+	static func make(context: ENV.Context? = nil) -> UserDefaultsManagerProtocol {
+		let context = context ?? ENV.context
+		return context == .test ? UserDefaultsManagerMock() : UserDefaultsManager()
 	}
+	
 }

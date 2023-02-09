@@ -8,9 +8,9 @@
 import UIKit
 
 class SettingsViewModel {
-	private let userPreferencesService: UserPreferencesService
+	private let userPreferencesService: UserPreferencesServiceProtocol
 	
-	init(userPreferencesService: UserPreferencesService) {
+	init(userPreferencesService: UserPreferencesServiceProtocol) {
 		self.userPreferencesService = userPreferencesService
 	}
 	

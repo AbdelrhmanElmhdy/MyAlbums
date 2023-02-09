@@ -7,6 +7,6 @@
 
 import Combine
 
-protocol NetworkManagerProtocol {
+protocol NetworkManagerProtocol: AutoMockable {
 	func executeRequest<T: Decodable>(_ target: API) -> AnyPublisher<T, NetworkRequestError>
 }

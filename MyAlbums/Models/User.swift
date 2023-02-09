@@ -13,4 +13,8 @@ struct User: Codable {
 	let address: Address
 }
 
-
+extension User: Equatable {
+	static func == (lhs: User, rhs: User) -> Bool {
+		lhs.id == rhs.id && lhs.name == rhs.name && lhs.address == rhs.address
+	}
+}

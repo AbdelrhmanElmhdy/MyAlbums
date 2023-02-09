@@ -8,6 +8,6 @@
 import Combine
 
 /// Handles all services related to the `Album` type
-protocol AlbumServiceProtocol {
+protocol AlbumServiceProtocol: AutoMockable {
 	func fetchAlbums(forUserId userId: Int) -> AnyPublisher<[Album], NetworkRequestError>
 }

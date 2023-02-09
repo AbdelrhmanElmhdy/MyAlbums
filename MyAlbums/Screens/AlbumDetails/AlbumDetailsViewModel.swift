@@ -8,7 +8,7 @@
 import Combine
 
 class AlbumDetailsViewModel {
-	let photoService: PhotoService
+	let photoService: PhotoServiceProtocol
 	
 	var photosSubscription: AnyCancellable?
 	
@@ -22,7 +22,7 @@ class AlbumDetailsViewModel {
 	
 	// MARK: Initialization
 	
-	init(album: Album, photoService: PhotoService) {
+	init(album: Album, photoService: PhotoServiceProtocol) {
 		self.albumId = album.id
 		self.title = album.title
 		self.photoService = photoService

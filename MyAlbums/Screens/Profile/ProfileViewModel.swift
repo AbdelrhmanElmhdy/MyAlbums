@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class ProfileViewModel {
-	let userService: UserService
-	let albumService: AlbumService
+	let userService: UserServiceProtocol
+	let albumService: AlbumServiceProtocol
 	
 	var dataRefreshSubscription: AnyCancellable?
 	
@@ -27,7 +27,7 @@ class ProfileViewModel {
 	
 	// MARK: Initialization
 	
-	init(userService: UserService, albumService: AlbumService) {
+	init(userService: UserServiceProtocol, albumService: AlbumServiceProtocol) {
 		self.userService = userService
 		self.albumService = albumService
 	}
