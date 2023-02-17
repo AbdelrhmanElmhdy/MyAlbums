@@ -22,14 +22,14 @@ final class ProfileViewModelTests: XCTestCase {
 		// When
 		sut.refreshData()
 		
-		XCTAssertEqual(sut.isLoading, true)
+		XCTAssertEqual(sut.loadingState, ProfileViewModel.LoadingState.loading)
 		
 		userServiceMock.fetchUserOfIdReturnValue.send(expectedUser)
 		albumServiceMock.fetchAlbumsForUserIdReturnValue.send(expectedAlbums)
 		
 		// Then
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-			XCTAssertEqual(sut.isLoading, false)
+			XCTAssertEqual(sut.loadingState, ProfileViewModel.LoadingState.loaded)
 			XCTAssertEqual(sut.userName, expectedUser.name)
 			XCTAssertEqual(sut.userAddress, String(describing: expectedUser.address))
 			XCTAssertEqual(sut.albums, expectedAlbums)

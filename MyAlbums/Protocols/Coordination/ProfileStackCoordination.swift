@@ -14,3 +14,7 @@ protocol ViewingAlbumDetails: AnyObject {
 protocol ViewingPhoto: AnyObject {
 	func viewPhoto(_ photo: Photo, thumbnailImage: UIImage?)
 }
+
+protocol PoppingPreviewedPhoto: AnyObject {
+	func popPhoto(inPreviewedViewController previewedViewController: UIViewController)
+}

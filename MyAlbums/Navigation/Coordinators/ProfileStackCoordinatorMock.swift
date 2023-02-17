@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileStackCoordinator: Coordinator, ViewingAlbumDetails, ViewingPhoto {
+class ProfileStackCoordinator: Coordinator, ViewingAlbumDetails, ViewingPhoto, PoppingPreviewedPhoto {
 	var children = Array<Coordinator>()
 	let navigationController: UINavigationController
 	let viewControllersFactory: ViewControllersFactory
@@ -36,5 +36,9 @@ class ProfileStackCoordinator: Coordinator, ViewingAlbumDetails, ViewingPhoto {
 	
 	func viewPhoto(_ photo: Photo, thumbnailImage: UIImage? = nil) {
 		navigationController.pushViewController(PhotoDetailsViewController(selectedPhoto: photo, thumbnailImage: thumbnailImage), animated: true)
+	}
+	
+	func popPhoto(inPreviewedViewController previewedViewController: UIViewController) {
+		self.navigationController.pushViewController(previewedViewController, animated: true)
 	}
 }

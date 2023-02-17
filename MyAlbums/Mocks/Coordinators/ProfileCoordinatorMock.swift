@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ProfileStackCoordinatorMock: Coordinator, ViewingAlbumDetails, ViewingPhoto {
+class ProfileStackCoordinatorMock: Coordinator, ViewingAlbumDetails, ViewingPhoto, PoppingPreviewedPhoto {
+	
 	var children = Array<Coordinator>()
 	let navigationController = UINavigationController()
 	
@@ -20,6 +21,10 @@ class ProfileStackCoordinatorMock: Coordinator, ViewingAlbumDetails, ViewingPhot
 	}
 	
 	func viewPhoto(_ photo: Photo, thumbnailImage: UIImage?) {
+		
+	}
+	
+	func popPhoto(inPreviewedViewController previewedViewController: UIViewController) {
 		
 	}
 	

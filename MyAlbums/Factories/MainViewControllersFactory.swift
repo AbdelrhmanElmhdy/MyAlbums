@@ -27,7 +27,7 @@ extension MainViewControllersFactory: ProfileViewControllersFactory {
 		return ProfileViewController(coordinator: coordinator, viewModel: viewModel)
 	}
 	
-	func makeAlbumDetailsViewController(for coordinator: ViewingPhoto, album: Album) -> AlbumDetailsViewController {
+	func makeAlbumDetailsViewController(for coordinator: ViewingPhoto & PoppingPreviewedPhoto, album: Album) -> AlbumDetailsViewController {
 		let viewModel = AlbumDetailsViewModel(album: album, photoService: dependencyContainer.photoService)
 		return AlbumDetailsViewController(coordinator: coordinator, viewModel: viewModel)
 	}

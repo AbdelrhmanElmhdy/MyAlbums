@@ -12,7 +12,7 @@ class AlbumDetailsViewController: UICollectionViewController {
 		
 	static let cellReuseIdentifier = "ImageCell"
 	
-	private unowned let coordinator: ViewingPhoto
+	private unowned let coordinator: ViewingPhoto & PoppingPreviewedPhoto
 	private let viewModel: AlbumDetailsViewModel
 	
 	let dataSource = AlbumDetailsCollectionViewDataSource()
@@ -33,7 +33,7 @@ class AlbumDetailsViewController: UICollectionViewController {
 	
 	// MARK: Initialization
 	
-	init(coordinator: ViewingPhoto, viewModel: AlbumDetailsViewModel) {
+	init(coordinator: ViewingPhoto & PoppingPreviewedPhoto, viewModel: AlbumDetailsViewModel) {
 		self.viewModel = viewModel
 		self.coordinator = coordinator
 		
@@ -60,6 +60,8 @@ class AlbumDetailsViewController: UICollectionViewController {
 		dataBinder.setupBindings()
 		didRefresh()
 	}
+	
+	// MARK: Setups
 	
 	private func setupViewController() {
 		view.backgroundColor = .systemBackground
@@ -126,6 +128,53 @@ extension AlbumDetailsViewController: UICollectionViewDelegateFlowLayout {
 		return sectionInsets
 	}
 
+}
+
+// MARK:  Peek & Pop
+
+extension AlbumDetailsViewController {
+	
+	private func makePreviewActionsMenu(for previewedPhotoDetailsVC: PhotoDetailsViewController) -> UIMenu {
+		let shareAction = UIAction(title: .ui.share, image: .share, identifier: nil) { [weak self] _ in
+			self?.didPressShare(previewedPhotoDetailsVC: previewedPhotoDetailsVC)
+		}
+		
+		return UIMenu(title: "", children: [shareAction])
+	}
+	
+	private func didPressShare(previewedPhotoDetailsVC: PhotoDetailsViewController) {
+		guard let image = previewedPhotoDetailsVC.controlledView.imageView.image else { return }
+		let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+		self.present(activityController, animated: true)
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView,
+															 contextMenuConfigurationForItemAt indexPath: IndexPath,
+															 point: CGPoint) -> UIContextMenuConfiguration? {
+		let cell = collectionView.cellForItem(at: indexPath) as! AlbumCollectionViewCell
+		guard let thumbnailImage = cell.image else { return nil }
+		
+		let photo = dataSource.isFiltering ? dataSource.filteredPhotos[indexPath.row] : dataSource.photos[indexPath.row]
+		let photoDetailsVC = PhotoDetailsViewController(selectedPhoto: photo, thumbnailImage: thumbnailImage)
+		
+		let config = UIContextMenuConfiguration(identifier: indexPath as NSIndexPath,
+																						previewProvider: { photoDetailsVC },
+																						actionProvider: { [weak self] _ in self?.makePreviewActionsMenu(for: photoDetailsVC)})
+																						
+		return config
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView,
+															 willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration,
+															 animator: UIContextMenuInteractionCommitAnimating) {
+		
+		guard let previewViewController = animator.previewViewController else { return }
+		
+		animator.addCompletion {
+			self.coordinator.popPhoto(inPreviewedViewController: previewViewController)
+		}
+	}
+	
 }
 
 // MARK: Preview

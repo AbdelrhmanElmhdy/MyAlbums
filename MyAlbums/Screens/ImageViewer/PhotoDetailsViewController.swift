@@ -12,7 +12,7 @@ import CombineCocoa
 class PhotoDetailsViewController: UIViewController {
 	// MARK: Properties
 	
-	private let controlledView = PhotoDetailsView()
+	let controlledView = PhotoDetailsView()
 	
 	private let selectedPhoto: Photo
 	private let thumbnailImage: UIImage?
