@@ -52,7 +52,8 @@ class SettingsDataSource: NSObject, UITableViewDataSource {
 			
 			return cell
 		} else {
-			return cell
+			return cell // The settings screen code was ported over from another app that does not support iOS 13
+			// The code was not amended to support iOS 13 for time efficiency purposes.
 		}
 	}
 	

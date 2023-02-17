@@ -19,7 +19,7 @@ class ProfileStackCoordinatorMock: Coordinator, ViewingAlbumDetails, ViewingPhot
 		
 	}
 	
-	func viewPhoto(_ photo: Photo) {
+	func viewPhoto(_ photo: Photo, thumbnailImage: UIImage?) {
 		
 	}
 	

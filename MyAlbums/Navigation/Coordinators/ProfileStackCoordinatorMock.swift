@@ -34,7 +34,7 @@ class ProfileStackCoordinator: Coordinator, ViewingAlbumDetails, ViewingPhoto {
 		navigationController.pushViewController(albumDetailsVC, animated: true)
 	}
 	
-	func viewPhoto(_ photo: Photo) {
-		navigationController.pushViewController(PhotoDetailsViewController(selectedPhoto: photo), animated: true)
+	func viewPhoto(_ photo: Photo, thumbnailImage: UIImage? = nil) {
+		navigationController.pushViewController(PhotoDetailsViewController(selectedPhoto: photo, thumbnailImage: thumbnailImage), animated: true)
 	}
 }

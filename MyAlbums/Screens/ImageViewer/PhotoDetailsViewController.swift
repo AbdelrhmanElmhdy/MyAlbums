@@ -15,13 +15,15 @@ class PhotoDetailsViewController: UIViewController {
 	private let controlledView = PhotoDetailsView()
 	
 	private let selectedPhoto: Photo
+	private let thumbnailImage: UIImage?
 	private let doubleTap =  UITapGestureRecognizer()
 	private var subscriptions = Set<AnyCancellable>()
 	
 	// MARK: Initialization
 	
-	init(selectedPhoto: Photo) {
+	init(selectedPhoto: Photo, thumbnailImage: UIImage?) {
 		self.selectedPhoto = selectedPhoto
+		self.thumbnailImage = thumbnailImage
 		super.init(nibName: nil, bundle: nil)
 	}
 	
@@ -41,6 +43,7 @@ class PhotoDetailsViewController: UIViewController {
 		view.backgroundColor = .systemBackground
 		controlledView.scrollView.delegate = self
 		controlledView.imageView.source = URL(string: selectedPhoto.url)
+		controlledView.imageView.image = thumbnailImage
 		
 		setupShareButton()
 		setupDoubleTapGestureRecognizer()
@@ -79,6 +82,10 @@ class PhotoDetailsViewController: UIViewController {
 
 extension PhotoDetailsViewController: UIScrollViewDelegate {
 	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-		return controlledView.imageView
+		// Only enable zooming when the image view has finished loading the image
+		// because supporting zooming on the thumbnail image introduces unnecessary complications
+		// regarding the image view's constraints.
+		
+		return controlledView.didLoadImage ? controlledView.imageView : nil
 	}
 }

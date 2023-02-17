@@ -49,5 +49,5 @@ final class MyAlbumsUITests: XCTestCase {
 		navigationBar.buttons[.ui.cancel].tap()
 		navigationBar.buttons[.ui.profile].tap()
 	}
-	
+	       
 }

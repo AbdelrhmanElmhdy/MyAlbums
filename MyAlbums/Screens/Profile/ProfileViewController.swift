@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class ProfileViewController: UITableViewController, PresentsToast {
 	// MARK: Properties
@@ -52,7 +53,7 @@ class ProfileViewController: UITableViewController, PresentsToast {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
 	}
-	
+		
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		viewModel.isPresentingToast = false
@@ -73,13 +74,17 @@ class ProfileViewController: UITableViewController, PresentsToast {
 	
 	func setupTableView() {
 		tableView.dataSource = dataSource
+		tableView.estimatedRowHeight = 45
+		tableView.isSkeletonable = true
 		tableView.register(ProfileTableViewSectionHeader.self, forHeaderFooterViewReuseIdentifier: Self.headerReuseIdentifier)
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: Self.albumCellReuseIdentifier)
+		tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: Self.albumCellReuseIdentifier)
 	}
 	
 	func setupHeader() {		
 		header.contentView.backgroundColor = .systemGray6
 		header.contentView.layer.cornerRadius = 10
+		header.contentView.isSkeletonable = true
+		header.contentView.skeletonCornerRadius = 10
 		
 		tableView.tableHeaderView = header
 	}

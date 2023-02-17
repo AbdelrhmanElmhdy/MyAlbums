@@ -11,6 +11,16 @@ class PhotoDetailsView: UIView {
 	let scrollView = UIScrollView()
 	let imageView = RemoteImageView()
 	
+	var didLoadImage = false {
+		didSet {
+			centerXConstraint.priority = didLoadImage ? .defaultLow : .defaultHigh
+			centerYConstraint.priority = didLoadImage ? .defaultLow : .defaultHigh
+		}
+	}
+	
+	private var centerXConstraint: NSLayoutConstraint!
+	private var centerYConstraint: NSLayoutConstraint!
+	
 	init() {
 		super.init(frame: .zero)
 		setupSubviews()
@@ -43,16 +53,19 @@ class PhotoDetailsView: UIView {
 	}
 	
 	private func setupImageView() {
+		imageView.didLoad = {[weak self] in
+			self?.didLoadImage = true
+		}
 		imageView.contentMode = .scaleAspectFit
 		imageView.isUserInteractionEnabled = true
 		
 		scrollView.addSubview(imageView)
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		
-		let centerXConstraint = imageView.centerXAnchor.constraint(equalTo: centerXAnchor)
-		let centerYConstraint = imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
-		centerXConstraint.priority = .defaultLow
-		centerYConstraint.priority = .defaultLow
+		centerXConstraint = imageView.centerXAnchor.constraint(equalTo: centerXAnchor)
+		centerYConstraint = imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+		centerXConstraint.priority = .defaultHigh
+		centerYConstraint.priority = .defaultHigh
 		
 		NSLayoutConstraint.activate([
 			imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),

@@ -14,6 +14,7 @@ struct UITextsContainer {
 	static let albumsTableViewTitle = "My Albums".localized
 	static let imagesSearchBarPlaceholder = "Search in images".localized
 	static let cancel = "Cancel".localized
+	static let tryAgain = "Try Again".localized
 	
 	// MARK: Settings Stack UI Texts
 	static let settings = "Settings".localized

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class ProfileHeader: UIView {
 	// MARK: Properties
@@ -14,13 +15,13 @@ class ProfileHeader: UIView {
 	
 	var userName: String = "" {
 		didSet {
-			primaryLabel.text = userName
+			primaryLabel.text = userName.isEmpty ? " " : userName
 		}
 	}
 	
 	var userAddress: String = "" {
 		didSet {
-			secondaryLabel.text = userAddress
+			secondaryLabel.text = userAddress.isEmpty ? " " : userAddress
 		}
 	}
 	
@@ -79,6 +80,8 @@ class ProfileHeader: UIView {
 	
 	private func setupContentView() {
 		addSubview(contentView)
+//		contentView.isSkeletonable = true
+//		contentView.skeletonCornerRadius = contentView.layer.cornerRadius
 		contentView.translatesAutoresizingMaskIntoConstraints = false
 		
 		NSLayoutConstraint.activate([

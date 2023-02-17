@@ -11,10 +11,8 @@ import UIKit
 
 class AlbumDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 	// MARK: Properties
-			
-	let placeHolderPhotos = Array(repeating: Photo(id: 0, albumId: 0, title: "", thumbnailUrl: "", url: ""), count: 8)
 	
-	lazy var photos: [Photo] = placeHolderPhotos
+	lazy var photos: [Photo] = []
 	var filteredPhotos: [Photo] = []
 	
 	var searchText = "" {

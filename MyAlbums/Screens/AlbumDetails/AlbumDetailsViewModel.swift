@@ -8,15 +8,16 @@
 import Combine
 
 class AlbumDetailsViewModel {
-	let photoService: PhotoServiceProtocol
+	private static let placeHolderPhotos = Array(repeating: Photo(id: 0, albumId: 0, title: "", thumbnailUrl: "", url: ""), count: 15)
+	private let photoService: PhotoServiceProtocol
 	
-	var photosSubscription: AnyCancellable?
+	private var photosSubscription: AnyCancellable?
 	
 	// MARK: State
 	
 	let albumId: Int
 	let title: String
-	@Published var photos: [Photo] = []
+	@Published var photos: [Photo] = AlbumDetailsViewModel.placeHolderPhotos
 	@Published var isLoading: Bool = false
 	@Published var searchText: String = ""
 	

@@ -50,3 +50,10 @@ extension API: TargetType {
 	}
 	
 }
+
+
+extension API: Cacheable {
+	var cachePolicy: URLRequest.CachePolicy {
+		.reloadRevalidatingCacheData
+	}
+}

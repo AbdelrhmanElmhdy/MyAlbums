@@ -70,6 +70,12 @@
 		BC66262629903EA600ED94D5 /* ProfileCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66262529903EA500ED94D5 /* ProfileCoordinatorMock.swift */; };
 		BC6626292990435700ED94D5 /* SettingsStackCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6626282990435700ED94D5 /* SettingsStackCoordinator.swift */; };
 		BC66262B2990458200ED94D5 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66262A2990458200ED94D5 /* UIImage+Ext.swift */; };
+		BCA843AF2997621F00B3D7AE /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA843AE2997621F00B3D7AE /* Cacheable.swift */; };
+		BCA843B1299762F600B3D7AE /* CachePolicyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA843B0299762F600B3D7AE /* CachePolicyPlugin.swift */; };
+		BCA843B32998B0F200B3D7AE /* URLCache+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA843B22998B0F200B3D7AE /* URLCache+Ext.swift */; };
+		BCA843B52998BD6600B3D7AE /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA843B42998BD6600B3D7AE /* UITableView+Ext.swift */; };
+		BCA843B82999B01C00B3D7AE /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = BCA843B72999B01C00B3D7AE /* SkeletonView */; };
+		BCA843BA299A07FF00B3D7AE /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA843B9299A07FF00B3D7AE /* ProfileTableViewCell.swift */; };
 		BCA8B741299258940062C3E5 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B740299258940062C3E5 /* ToastView.swift */; };
 		BCA8B7432992614C0062C3E5 /* PresentsToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B7422992614C0062C3E5 /* PresentsToast.swift */; };
 		BCA8B745299261670062C3E5 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B744299261670062C3E5 /* UIColor+Ext.swift */; };
@@ -212,6 +218,11 @@
 		BC66262529903EA500ED94D5 /* ProfileCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorMock.swift; sourceTree = "<group>"; };
 		BC6626282990435700ED94D5 /* SettingsStackCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStackCoordinator.swift; sourceTree = "<group>"; };
 		BC66262A2990458200ED94D5 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		BCA843AE2997621F00B3D7AE /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
+		BCA843B0299762F600B3D7AE /* CachePolicyPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicyPlugin.swift; sourceTree = "<group>"; };
+		BCA843B22998B0F200B3D7AE /* URLCache+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLCache+Ext.swift"; sourceTree = "<group>"; };
+		BCA843B42998BD6600B3D7AE /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		BCA843B9299A07FF00B3D7AE /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		BCA8B740299258940062C3E5 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		BCA8B7422992614C0062C3E5 /* PresentsToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentsToast.swift; sourceTree = "<group>"; };
 		BCA8B744299261670062C3E5 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -269,6 +280,7 @@
 				BCB37DB62991C4AF00D6C671 /* CombineCocoa in Frameworks */,
 				BCB37DD82992210800D6C671 /* ShimmerSwift in Frameworks */,
 				BCB37DAF2991B07200D6C671 /* CombineMoya in Frameworks */,
+				BCA843B82999B01C00B3D7AE /* SkeletonView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +497,8 @@
 				BCB37D6A2990D58C00D6C671 /* UIView+Ext.swift */,
 				BCB37DBB2991CE9A00D6C671 /* UIRefreshControl+Ext.swift */,
 				BCA8B744299261670062C3E5 /* UIColor+Ext.swift */,
+				BCA843B22998B0F200B3D7AE /* URLCache+Ext.swift */,
+				BCA843B42998BD6600B3D7AE /* UITableView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -538,6 +552,7 @@
 			children = (
 				BC66260229902A5D00ED94D5 /* NetworkManager.swift */,
 				BCB37DAA2991AA4400D6C671 /* API.swift */,
+				BCA843B0299762F600B3D7AE /* CachePolicyPlugin.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -555,6 +570,7 @@
 				BCA8B7422992614C0062C3E5 /* PresentsToast.swift */,
 				BCA8B74829930D3F0062C3E5 /* ToastDelegate.swift */,
 				BC523D102993875100EA9EAF /* SettingsViewControllerProtocol.swift */,
+				BCA843AE2997621F00B3D7AE /* Cacheable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -676,6 +692,7 @@
 				BCB37D682990D0AE00D6C671 /* AlbumCollectionViewCell.swift */,
 				BCB37DD4299220C800D6C671 /* RemoteImageView.swift */,
 				BCA8B740299258940062C3E5 /* ToastView.swift */,
+				BCA843B9299A07FF00B3D7AE /* ProfileTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -701,6 +718,7 @@
 				BCB37DB02991B07200D6C671 /* Moya */,
 				BCB37DB52991C4AF00D6C671 /* CombineCocoa */,
 				BCB37DD72992210800D6C671 /* ShimmerSwift */,
+				BCA843B72999B01C00B3D7AE /* SkeletonView */,
 			);
 			productName = MyAlbums;
 			productReference = BC6625B2298FF9FD00ED94D5 /* MyAlbums.app */;
@@ -787,6 +805,7 @@
 				BCB37DAD2991B07200D6C671 /* XCRemoteSwiftPackageReference "Moya" */,
 				BCB37DB42991C4AF00D6C671 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 				BCB37DD62992210800D6C671 /* XCRemoteSwiftPackageReference "ShimmerSwift" */,
+				BCA843B62999B01C00B3D7AE /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = BC6625B3298FF9FD00ED94D5 /* Products */;
 			projectDirPath = "";
@@ -835,6 +854,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA843B32998B0F200B3D7AE /* URLCache+Ext.swift in Sources */,
 				BCB37DCF29921C9A00D6C671 /* PhotoServicesProtocol.swift in Sources */,
 				BC523D0D299386CD00EA9EAF /* SettingsViewController.swift in Sources */,
 				BC66262B2990458200ED94D5 /* UIImage+Ext.swift in Sources */,
@@ -862,6 +882,7 @@
 				BCA8B741299258940062C3E5 /* ToastView.swift in Sources */,
 				BC66262629903EA600ED94D5 /* ProfileCoordinatorMock.swift in Sources */,
 				BC3D267229905B5E00948490 /* ProfileViewModel.swift in Sources */,
+				BCA843BA299A07FF00B3D7AE /* ProfileTableViewCell.swift in Sources */,
 				BC2F302B2994B52200137833 /* NetworkManagerFactory.swift in Sources */,
 				BCB37D632990CE8E00D6C671 /* AlbumDetailsViewModel.swift in Sources */,
 				BCA8B747299261870062C3E5 /* ColorNamesContainer.swift in Sources */,
@@ -884,11 +905,13 @@
 				BC662610299036E600ED94D5 /* TabBarCoordinator.swift in Sources */,
 				BC6625B6298FF9FD00ED94D5 /* AppDelegate.swift in Sources */,
 				BC523D1C299389F100EA9EAF /* SourceryProtocols.swift in Sources */,
+				BCA843B1299762F600B3D7AE /* CachePolicyPlugin.swift in Sources */,
 				BCB37DD5299220C800D6C671 /* RemoteImageView.swift in Sources */,
 				BC523D152993883400EA9EAF /* SettingsSectionsFactory.swift in Sources */,
 				BCB37D692990D0AE00D6C671 /* AlbumCollectionViewCell.swift in Sources */,
 				BC523D1F29938AA500EA9EAF /* UserPreferences.swift in Sources */,
 				BCA8B7432992614C0062C3E5 /* PresentsToast.swift in Sources */,
+				BCA843AF2997621F00B3D7AE /* Cacheable.swift in Sources */,
 				BC66260629902B5900ED94D5 /* NetworkManagerProtocol.swift in Sources */,
 				BC523D2929938F9300EA9EAF /* UserDefaultsManagerMock.swift in Sources */,
 				BCA8B745299261670062C3E5 /* UIColor+Ext.swift in Sources */,
@@ -913,6 +936,7 @@
 				BC3D267B299061C900948490 /* Album.swift in Sources */,
 				BCB37DD129921D3100D6C671 /* PhotoService.swift in Sources */,
 				BCD1AFE62990695000CFDDD4 /* ProfileHeader.swift in Sources */,
+				BCA843B52998BD6600B3D7AE /* UITableView+Ext.swift in Sources */,
 				BC523D092993863800EA9EAF /* SettingsOption.swift in Sources */,
 				BC523D2329938BF800EA9EAF /* ENV.swift in Sources */,
 			);
@@ -1286,6 +1310,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BCA843B62999B01C00B3D7AE /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		BCB37DAD2991B07200D6C671 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -1342,6 +1374,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BCB37DD62992210800D6C671 /* XCRemoteSwiftPackageReference "ShimmerSwift" */;
 			productName = ShimmerSwift;
+		};
+		BCA843B72999B01C00B3D7AE /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCA843B62999B01C00B3D7AE /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 		BCB37DAE2991B07200D6C671 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

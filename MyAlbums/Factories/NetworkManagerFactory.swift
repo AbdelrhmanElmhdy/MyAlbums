@@ -12,9 +12,11 @@ class NetworkManagerFactory {
 	
 	static func make(context: ENV.Context? = nil) -> NetworkManagerProtocol {
 		let context = context ?? ENV.context
-		let apiProvider = context == .test ? MoyaProvider<API>(stubClosure: MoyaProvider.immediatelyStub) : MoyaProvider<API>()
+		let apiProvider = context == .test
+			? MoyaProvider<API>(stubClosure: MoyaProvider.immediatelyStub)
+			: MoyaProvider<API>(plugins: [CachePolicyPlugin()])
 		
-		return NetworkManager(APIProvider: apiProvider)
+		return NetworkManager(apiProvider: apiProvider)
 	}
 	
 }

@@ -17,6 +17,10 @@ class AlbumCollectionViewCell: UICollectionViewCell {
 		}
 	}
 	
+	var image: UIImage? {
+		imageView.image
+	}
+	
 	private let imageView: RemoteImageView = {
 		let imageView = RemoteImageView()
 		imageView.contentMode = .scaleAspectFill

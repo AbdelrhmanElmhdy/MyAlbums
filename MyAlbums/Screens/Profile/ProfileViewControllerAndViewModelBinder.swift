@@ -7,22 +7,23 @@
 
 import UIKit
 import CombineCocoa
+import SkeletonView
 
 class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<ProfileViewController, ProfileViewModel> {
-	
+		
 	override func setupBindings() {
 		// userName
 		viewModel.$userName
 			.receive(on: DispatchQueue.main)
 			.map { $0 }
-			.assign(to: \.userName, on: viewController.header, animation: .fade(duration: 0.3))
+			.assign(to: \.userName, on: viewController.header)
 			.store(in: &subscriptions)
 
 		// userAddress
 		viewModel.$userAddress
 			.receive(on: DispatchQueue.main)
 			.map { $0 }
-			.assign(to: \.userAddress, on: viewController.header, animation: .fade(duration: 0.3))
+			.assign(to: \.userAddress, on: viewController.header)
 			.store(in: &subscriptions)
 		
 		// albums
@@ -34,16 +35,27 @@ class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<
 			})
 			.store(in: &subscriptions)
 		
-		// isLoading
-		viewModel.$isLoading
+		// loadingState
+		viewModel.$loadingState
 			.receive(on: DispatchQueue.main)
 			.removeDuplicates()
-			.sink (receiveValue: {
-				if $0 {
-					guard self.viewController.tableView.refreshControl?.isRefreshing != true else { return }
-					self.viewController.tableView.refreshControl?.beginRefreshing()
-				} else {
-					self.viewController.tableView.refreshControl?.endRefreshing()
+			.sink (receiveValue: { loadingState in
+				if loadingState == .loading {
+					self.resetTableView()
+					self.showAnimatedSkeleton()
+					self.beginRefreshingRefreshControl()
+					return
+				}
+				
+				self.hideAnimatedSkeleton()
+				self.viewController.tableView.restore()
+				self.stopRefreshingRefreshControl()
+				
+				if loadingState == .noConnection {
+					self.viewController.tableView.setNoInternetConnectionMessage(
+						tryAgainButtonTapHandler: #selector(ProfileViewController.didRefresh),
+						tabHandlerTarget: self.viewController
+					)
 				}
 			})
 			.store(in: &subscriptions)
@@ -51,7 +63,11 @@ class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<
 		viewController.tableView.refreshControl?.isRefreshingPublisher
 			.receive(on: DispatchQueue.main)
 			.removeDuplicates()
-			.assign(to: \.isLoading, on: viewModel)
+			.sink { refreshing in
+				if refreshing {
+					self.viewModel.loadingState = .loading
+				}
+			}
 			.store(in: &subscriptions)
 		
 		// isPresentingToast
@@ -86,6 +102,35 @@ class ProfileViewControllerAndViewModelBinder: ViewControllerAndViewModelBinder<
 		// toastDetailsDescription
 		viewModel.$toastDetailsDescription.assign(to: \.detailsDescription, on: viewController.toastView).store(in: &subscriptions)
 		
+	}
+	
+	private func resetTableView() {
+		viewModel.albums = []
+		viewModel.userName = ""
+		viewModel.userAddress = ""
+		viewController.tableView.restore()
+	}
+	
+	private func showAnimatedSkeleton() {
+		viewController.header.contentView.showAnimatedSkeleton(usingColor: .systemGray5)
+		viewController.tableView.showAnimatedSkeleton(usingColor: .systemGray5)
+	}
+	
+	private func hideAnimatedSkeleton() {
+		viewController.header.contentView.stopSkeletonAnimation()
+		viewController.header.contentView.hideSkeleton()
+		
+		viewController.tableView.stopSkeletonAnimation()
+		viewController.tableView.hideSkeleton()
+	}
+	
+	private func beginRefreshingRefreshControl() {
+		guard viewController.tableView.refreshControl?.isRefreshing != true else { return }
+		viewController.tableView.refreshControl?.beginRefreshing()
+	}
+	
+	private func stopRefreshingRefreshControl() {
+		viewController.tableView.refreshControl?.endRefreshing()
 	}
 	
 }

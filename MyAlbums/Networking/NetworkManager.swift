@@ -11,14 +11,14 @@ import Moya
 import CombineMoya
 
 class NetworkManager: NetworkManagerProtocol {
-	private let APIProvider: MoyaProvider<API>
+	private let apiProvider: MoyaProvider<API>
 	
-	init(APIProvider: MoyaProvider<API>) {
-		self.APIProvider = APIProvider
+	init(apiProvider: MoyaProvider<API>) {
+		self.apiProvider = apiProvider
 	}
 	
 	func executeRequest<T: Decodable>(_ target: API) -> AnyPublisher<T, NetworkRequestError> {
-		return APIProvider.requestPublisher(target)
+		return apiProvider.requestPublisher(target)
 			.tryMap { response in
 				guard (200...299) ~= response.statusCode else {
 					throw NetworkRequestError.httpResponseError(statusCode: response.statusCode)

@@ -95,8 +95,9 @@ class AlbumDetailsViewController: UICollectionViewController {
 extension AlbumDetailsViewController {
 	
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let cell = collectionView.cellForItem(at: indexPath) as! AlbumCollectionViewCell
 		let photo = dataSource.isFiltering ? dataSource.filteredPhotos[indexPath.row] : dataSource.photos[indexPath.row]
-		coordinator.viewPhoto(photo)
+		coordinator.viewPhoto(photo, thumbnailImage: cell.image)
 	}
 		
 }
